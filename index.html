@@ -52,19 +52,14 @@
             <div class="container">
                 <h2>Projects</h2>
                 <div class="card-grid">
-                    <div class="card">
+                    <div class="card project-card" data-target-modal="#robot-modal">
                         <img src="assets/robot.jpg" alt="Autonomous Robot Project" class="card-img">
                         <div class="card-content">
                             <h3>Autonomous Robot Developer (Machine Arge)</h3>
                             <p>
-                                As an autonomous robot developer, I was responsible for:
+                                Hands-on experience developing autonomous navigation and perception systems.
+                                <span class="click-to-see-more">Click to see details...</span>
                             </p>
-                            <ul>
-                                <li>Developing embedded systems for STM32-based microcontrollers.</li>
-                                <li>Implementing autonomous algorithms using ROS (Robot Operating System).</li>
-                                <li>Using technologies such as Intel RealSense cameras, visual odometry, and GPS-IMU for precise localization and navigation.</li>
-                                <li>Enabling autonomous waypoint navigation to GPS coordinates with obstacle avoidance capabilities.</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -73,7 +68,7 @@
 
         <section id="publications">
             <div class="container">
-                <h2>Academic Publications & Reports</h2>
+                <h2>Academic Papers & Reports</h2>
                 <ul class="publications-list">
                     <li>
                         <div class="publication-item">
@@ -138,6 +133,33 @@
         <p>&copy; 2025 Samet Atak. All rights reserved.</p>
     </footer>
 
+    <div class="modal" id="robot-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3>Project Spotlight: Autonomous Robot Developer</h3>
+            
+            <div class="modal-video-container">
+                <video src="assets/robot-video.mp4" controls autoplay muted loop playsinline>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="modal-gallery-2col">
+                <img src="assets/robot-img-1.jpg" alt="Robot Project Photo 1">
+                <img src="assets/robot-img-2.jpg" alt="Robot Project Photo 2">
+            </div>
+
+            <h4>Key Features & Responsibilities:</h4>
+            <ul>
+                <li>Developed embedded systems for STM32-based microcontrollers.</li>
+                <li>Implemented autonomous navigation algorithms (path planning, obstacle avoidance) using ROS.</li>
+                <li>Utilized Intel RealSense cameras, visual odometry, and GPS-IMU for precise localization.</li>
+                <li>Enabled autonomous waypoint navigation to GPS coordinates in real-world environments.</li>
+            </ul>
+        </div>
+    </div>
+
     <div class="modal" id="njord-modal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
@@ -149,6 +171,7 @@
             <div class="modal-gallery">
                 <img src="assets/njord-1.jpg" alt="NJORD Competition Photo 1">
                 <img src="assets/njord-2.jpg" alt="NJORD Competition Photo 2">
+                <img src="assets/njord-3.jpg" alt="NJORD Competition Photo 3">
             </div>
         </div>
     </div>
@@ -163,7 +186,7 @@
             </p>
             <div class="modal-gallery">
                 <img src="assets/teknofest.jpg" alt="Teknofest Competition Photo">
-                </div>
+            </div>
         </div>
     </div>
 
