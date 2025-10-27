@@ -69,7 +69,7 @@ header nav ul li a.active { color: var(--primary-color); }
     border-radius: 50%;
     border: 5px solid var(--border-color);
     object-fit: cover;
-    object-position: center -50px; /* Resmi -20px yukarı kaydırır */
+    object-position: center -20px;
     margin-bottom: 20px;
 }
 .subtitle { font-size: 1.2rem; color: var(--secondary-color); font-weight: 300; }
@@ -186,7 +186,8 @@ video.card-img { height: 250px; }
 .modal {
     position: fixed; top: 0; left: 0;
     width: 100%; height: 100%;
-    z-index: 2000; display: none;
+    z-index: 2000;
+    display: none;
     align-items: center; justify-content: center;
     padding: 20px;
 }
@@ -215,23 +216,56 @@ video.card-img { height: 250px; }
 }
 .modal-close:hover { color: #333; }
 
-/* Proje Modalı için Özel Stiller */
-.modal-video-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-.modal-video-container {
+/* YENİ: Proje Modalı Video Slider Stilleri */
+.modal-slider-container {
+    position: relative;
     width: 100%;
+    margin-bottom: 20px;
     background-color: #000;
     border-radius: 5px;
     overflow: hidden;
 }
-.modal-video-container video {
+.video-slider {
     width: 100%;
-    height: auto;
+    position: relative;
+}
+.video-slide {
+    display: none; /* JS ile .active class'ı eklenince görünecek */
+    width: 100%;
+}
+.video-slide.active {
     display: block;
+}
+.video-slide video {
+    width: 100%;
+    height: auto; /* Yatay videolar için */
+    max-height: 500px; /* Dikey videoların çok uzamasını engeller */
+    display: block;
+    margin: 0 auto; /* Dikey videoyu ortalar */
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.prev-btn {
+    left: 10px;
+}
+.next-btn {
+    right: 10px;
 }
 
 /* Achievement Galerisi (3'lü yapı için) */
@@ -266,8 +300,12 @@ footer {
     .publication-item { flex-direction: column; align-items: center; text-align: center; }
     .publication-item > div { text-align: left; }
     
-    .modal-gallery,
-    .modal-video-grid {
+    .modal-gallery {
         grid-template-columns: 1fr;
+    }
+    
+    .slider-btn {
+        font-size: 1rem;
+        padding: 8px 12px;
     }
 }
