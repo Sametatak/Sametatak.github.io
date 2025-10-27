@@ -54,8 +54,7 @@
                 <div class="card-grid">
                     <div class="card">
                         <img src="assets/robot.jpg" alt="Autonomous Robot Project" class="card-img">
-                        
-<div class="card-content">
+                        <div class="card-content">
                             <h3>Autonomous Robot Developer (Machine Arge)</h3>
                             <p>
                                 As an autonomous robot developer, I was responsible for:
@@ -68,7 +67,7 @@
                             </ul>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
         </section>
 
@@ -78,7 +77,7 @@
                 <ul class="publications-list">
                     <li>
                         <div class="publication-item">
-                            [Image of the cover page of the MRT-report3 technical report, showing the title "Advancing Ensemble Regression" and author "Samet Atak"]
+                            
                             <div>
                                 <span class="publication-type">Technical Report</span>
                                 <h3 class="publication-title">Advancing Ensemble Regression: Automated Hyperparameter Tuning of the Diversity-Accuracy Trade-Off in Sign Diversity Metric</h3>
@@ -93,7 +92,7 @@
                     </li>
                     <li>
                         <div class="publication-item">
-                            [Image of the first page of the IEEE paper, showing the title "Real-Time Face Recognition and Tracking in Matlab" and authors "Samet Atak, Üsame Delihasan"]
+                            
                             <div>
                                 <span class="publication-type">Paper</span>
                                 <h3 class="publication-title">Real-Time Face Recognition and Tracking in Matlab</h3>
@@ -113,36 +112,22 @@
         <section id="achievements" class="section-bg">
             <div class="container">
                 <h2>Achievements</h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <img src="assets/njord-1.jpg" alt="NJORD Competition Image 1" class="card-img">
-                        <div class="card-content">
-                            <h3>Winner - NJORD The Autonomous Ship Challenge (2023)</h3>
-                            <p>
-                                As a ROS Team Member of ITU Autobee, we achieved first place in the 2023 NJORD Autonomous Ship Challenge held in Norway.
-                            </p>
-                        </div>
-                    </div>
+                <div class="achievement-grid">
                     
-                    <div class="card">
-                        <img src="assets/njord-2.jpg" alt="NJORD Competition Image 2" class="card-img">
-                        <div class="card-content">
-                            <h3>NJORD The Autonomous Ship Challenge (Additional Photo)</h3>
-                            <p>
-                                An additional visual from our winning performance at the prestigious NJORD competition in Norway.
-                            </p>
+                    <div class="achievement-item" data-target-modal="#njord-modal">
+                        <img src="assets/njord-1.jpg" alt="NJORD Challenge" class="achievement-bg">
+                        <div class="achievement-title-overlay">
+                            <h3>Winner - NJORD The Autonomous Ship Challenge (2023)</h3>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <img src="assets/teknofest.jpg" alt="Teknofest TIKA" class="card-img">
-                        <div class="card-content">
+                    <div class="achievement-item" data-target-modal="#teknofest-modal">
+                        <img src="assets/teknofest.jpg" alt="Teknofest TIKA" class="achievement-bg">
+                        <div class="achievement-title-overlay">
                             <h3>Finalist - Teknofest TIKA Competition</h3>
-                            <p>
-                                With the ITU Autobee team, we successfully qualified as finalists in the Teknofest TIKA Competition.
-                            </p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -152,6 +137,36 @@
     <footer>
         <p>&copy; 2025 Samet Atak. All rights reserved.</p>
     </footer>
+
+    <div class="modal" id="njord-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3>Winner - NJORD The Autonomous Ship Challenge (2023)</h3>
+            <p>
+                As a ROS Team Member of ITU Autobee, we achieved first place in the 2023 NJORD Autonomous Ship Challenge held in Norway. This involved developing a fully autonomous vessel to compete in complex navigation, obstacle avoidance, and docking tasks.
+            </p>
+            <div class="modal-gallery">
+                <img src="assets/njord-1.jpg" alt="NJORD Competition Photo 1">
+                <img src="assets/njord-2.jpg" alt="NJORD Competition Photo 2">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="teknofest-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3>Finalist - Teknofest TIKA Competition</h3>
+            <p>
+                With the ITU Autobee team, we successfully qualified as finalists in the Teknofest TIKA Competition, developing innovative autonomous solutions for challenging scenarios.
+            </p>
+            <div class="modal-gallery">
+                <img src="assets/teknofest.jpg" alt="Teknofest Competition Photo">
+                </div>
+        </div>
+    </div>
+
 
     <script src="script.js"></script>
 </body>
