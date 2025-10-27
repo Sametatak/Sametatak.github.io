@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samet Atak | Portfolyo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hakkinda" class="nav-link active">Hakkında</a></li>
+                <li><a href="#projeler" class="nav-link">Projeler</a></li>
+                <li><a href="#yayinlar" class="nav-link">Yayınlar</a></li>
+                <li><a href="#basarilar" class="nav-link">Başarılar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hakkinda">
+            <div class="container hero-container">
+                <div class="hero-left">
+                    <img src="https://via.placeholder.com/250x250.png?text=Samet+Atak" alt="Samet Atak Profil Fotoğrafı" class="profile-pic">
+                    <h1>Samet Atak</h1>
+                    <p class="subtitle">İTÜ Kontrol ve Otomasyon Müh. Öğrencisi<br>Makine Öğrenimi & Otonom Sistemler</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Sametatak" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com/in/samet-atak-506980250" target="_blank">LinkedIn</a>
+                        <a href="mailto:sametatakwork@gmail.com">E-posta</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <h2>Hakkımda</h2>
+                    <p>
+                        İstanbul Teknik Üniversitesi Kontrol ve Otomasyon Mühendisliği 4. sınıf öğrencisiyim. Temel ilgi alanlarım makine öğrenimi, otonom robotik ve topluluk (ensemble) öğrenme yöntemleridir.
+                    </p>
+                    <p>
+                        Eğitimim sırasında Almanya'daki Kassel Üniversitesi'nde makine öğrenimi araştırmacısı olarak görev aldım ve burada topluluk regresyon modellerinin otomatik hiperparametre ayarlanması üzerine çalıştım. 
+                    </p>
+                    <p>
+                        Ayrıca, Machine Arge bünyesinde otonom robot geliştirici olarak ROS (Robot Operating System), STM32 tabanlı gömülü sistemler, Intel RealSense kameralar, GPS-IMU sistemleri ve yol planlama algoritmaları kullanarak otonom araçlar geliştirdim.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projeler" class="section-bg">
+            <div class="container">
+                <h2>Projeler</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/600x400.png?text=Otonom+Robot+Projesi" alt="Otonom Robot Projesi" class="card-img">
+                        <div class="card-content">
+                            <h3>Otonom Robot Geliştirme (Machine Arge)</h3>
+                            <p>
+                                Yıldız Teknopark'taki Machine Arge firmasında otonom robot geliştirici olarak çalıştım. Bu süreçte:
+                            </p>
+                            <ul>
+                                <li>STM32 tabanlı mikrodenetleyiciler için gömülü sistemler geliştirdim.</li>
+                                <li>ROS kullanarak otonom algoritmalar (path planning, obstacle avoidance) uyguladım.</li>
+                                <li>Intel RealSense kamera, görsel odometri ve GPS-IMU kullanarak hassas lokalizasyon sağladım.</li>
+                                <li>Robotun GPS koordinatlarına otonom olarak gitmesini ve engellerden kaçmasını sağladım.</li>
+                            </ul>
+                            </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="yayinlar">
+            <div class="container">
+                <h2>Akademik Yayınlar ve Raporlar</h2>
+                <ul class="publications-list">
+                    <li>
+                        <span class="publication-type">Teknik Rapor</span>
+                        <h3 class="publication-title">Advancing Ensemble Regression: Automated Hyperparameter Tuning of the Diversity-Accuracy Trade-Off in Sign Diversity Metric</h3>
+                        <p class="publication-authors"><strong>Samet Atak</strong></p>
+                        <p class="publication-venue">Makine Öğrenimi Araştırmacısı Staj Raporu (MRT-report3), Kassel Üniversitesi, Almanya (2025)</p>
+                        <div class="card-links">
+                            <a href="MRT-report3.pdf" target="_blank">Raporu Görüntüle (PDF)</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="publication-type">Makale</span>
+                        <h3 class="publication-title">Real-Time Face Recognition and Tracking in Matlab</h3>
+                        <p class="publication-authors">Üsame Delihasan, <strong>Samet Atak</strong></p>
+                        <p class="publication-venue">IEEE Formatlı Proje Raporu (2025)</p>
+                        <div class="card-links">
+                            <a href="IEEE_Paper.pdf" target="_blank">Makaleyi Görüntüle (PDF)</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="basarilar" class="section-bg">
+            <div class="container">
+                <h2>Başarılar</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/600x400.png?text=NJORD+Yar%C4%B1%C5%9Fmas%C4%B1" alt="NJORD Yarışması" class="card-img">
+                        <div class="card-content">
+                            <h3>NJORD - The Autonomous Ship Challenge (Birincilik)</h3>
+                            <p>
+                                İTÜ Autobee ekibinin ROS Takım Üyesi olarak, 2023 yılında Norveç'te düzenlenen NJORD Otonom Gemi Yarışması'nda birincilik elde ettik.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="https://via.placeholder.com/600x400.png?text=Teknofest+TIKA" alt="Teknofest TIKA" class="card-img">
+                        <div class="card-content">
+                            <h3>Teknofest TIKA Yarışması (Finalist)</h3>
+                            <p>
+                                İTÜ Autobee ekibiyle birlikte Teknofest TIKA Yarışması'nda finalist olma başarısını gösterdik.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Samet Atak. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
