@@ -67,11 +67,10 @@ header nav ul li a.active { color: var(--primary-color); }
 .profile-pic {
     width: 250px;
     height: 250px;
-    /* Yuvarlak yerine oval bir şekil ve fotoğrafın kutuya sığması */
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Üst kısmı daha oval, alt kısmı daha az */
+    border-radius: 50%; /* Tekrar yuvarlak yapıyoruz, ancak position ile oynayacağız */
     border: 5px solid var(--border-color);
-    object-fit: cover; /* Resmi kutuya sığdırır, gerekirse keser */
-    object-position: center top; /* Resmi yukarı doğru hizala */
+    object-fit: cover;
+    object-position: center -20px; /* Yukarı doğru kaydırmak için negatif değer */
     margin-bottom: 20px;
 }
 .subtitle { font-size: 1.2rem; color: var(--secondary-color); font-weight: 300; }
@@ -158,16 +157,32 @@ video.card-img { height: 250px; }
 .publication-venue { color: var(--secondary-color); font-weight: 400; }
 .publication-description { font-size: 0.95rem; color: #555; margin-top: -5px; }
 
-/* Achievements Section Styles */
+/* Achievements Section Styles - Düzeltildi */
 .achievement-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 30px;
 }
 .achievement-item {
-    position: relative; height: 300px;
-    border-radius: 8px; overflow: hidden;
-    cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative;
+    height: 300px; /* Sabit yükseklik, taşmayı engeller */
+    border-radius: 8px;
+    overflow: hidden; /* Taşmayı gizle */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: box-shadow 0.3s ease;
 }
-.achievement-item:hover { box-shadow:
+.achievement-item:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.achievement-item:hover .achievement-bg {
+    transform: scale(1.05);
+}
+.achievement-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmi kutuya sığdırır, orantıyı korur */
+    transition: transform 0.4s ease;
+}
+.achievement-title-overlay {
+    position: absolute; bottom
