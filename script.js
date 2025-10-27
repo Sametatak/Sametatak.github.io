@@ -32,20 +32,18 @@ window.addEventListener('DOMContentLoaded', () => {
     const modalCloseButtons = document.querySelectorAll('.modal-close');
     const modalOverlays = document.querySelectorAll('.modal-overlay');
 
-    // Modal açma butonları (Başarı kutucukları + Proje Kartı)
-    modalOpenButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetModalId = button.getAttribute('data-target-modal');
-            const modal = document.querySelector(targetModalId);
-            if (modal) {
-                modal.classList.add('active');
+    // Kapatma fonksiyonu (VİDEO DURDURMA EKLENDİ)
+    const closeModal = (modal) => {
+        if (!modal) return;
+        modal.classList.remove('active');
+        // Modal kapanınca içindeki tüm videoları durdur ve başa sar
+        const videos = modal.querySelectorAll('video');
+        videos.forEach(video => {
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
             }
         });
-    });
-
-    // Kapatma fonksiyonu
-    const closeModal = (modal) => {
-        modal.classList.remove('active');
     };
 
     // 'X' butonlarına tıklayınca kapat
@@ -61,6 +59,65 @@ window.addEventListener('DOMContentLoaded', () => {
         overlay.addEventListener('click', () => {
             const modal = overlay.closest('.modal');
             closeModal(modal);
+        });
+    });
+
+    // 3. YENİ: Robot Projesi Video Slider'ı
+    const robotModal = document.querySelector('#robot-modal');
+    if (robotModal) {
+        const slides = robotModal.querySelectorAll('.video-slide');
+        const prevBtn = robotModal.querySelector('.prev-btn');
+        const nextBtn = robotModal.querySelector('.next-btn');
+        let currentSlide = 0;
+        const numSlides = slides.length;
+
+        // Belirli bir slide'ı gösteren fonksiyon
+        const showRobotSlide = (index) => {
+            slides.forEach((slide, i) => {
+                const video = slide.querySelector('video');
+                if (i === index) {
+                    slide.classList.add('active');
+                    // Sadece aktif olan videoyu oynat
+                    if (video) {
+                        video.play().catch(e => console.warn("Video autoplay was blocked by the browser."));
+                    }
+                } else {
+                    slide.classList.remove('active');
+                    // Aktif olmayan videoları durdur
+                    if (video) {
+                        video.pause();
+                    }
+                }
+            });
+        };
+
+        // İleri butonu
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % numSlides;
+            showRobotSlide(currentSlide);
+        });
+
+        // Geri butonu
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + numSlides) % numSlides;
+            showRobotSlide(currentSlide);
+        });
+    }
+
+    // Modal açma butonları (SLIDER BAŞLATMA EKLENDİ)
+    modalOpenButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetModalId = button.getAttribute('data-target-modal');
+            const modal = document.querySelector(targetModalId);
+            if (modal) {
+                modal.classList.add('active');
+                
+                // Eğer robot modalı açılıyorsa, slider'ı ilk slayttan başlat
+                if (targetModalId === '#robot-modal') {
+                    currentSlide = 0; // Her açılışta başa sar
+                    showRobotSlide(currentSlide);
+                }
+            }
         });
     });
 
