@@ -1,9 +1,9 @@
-/* Genel Ayarlar */
+/* General Settings */
 :root {
-    --primary-color: #007BFF; /* Ana Vurgu Rengi (Mavi) */
-    --secondary-color: #6c757d; /* İkincil Renk (Gri) */
-    --text-color: #333; /* Ana Metin Rengi */
-    --light-gray: #f8f9fa; /* Arka Plan Rengi */
+    --primary-color: #007BFF; /* Main Accent Color (Blue) */
+    --secondary-color: #6c757d; /* Secondary Color (Gray) */
+    --text-color: #333; /* Main Text Color */
+    --light-gray: #f8f9fa; /* Background Color */
     --border-color: #dee2e6;
 }
 
@@ -14,7 +14,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Sayfa içi linklere yumuşak kaydırma */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 body {
@@ -43,12 +43,12 @@ ul { list-style: circle; margin-left: 20px; }
 a { color: var(--primary-color); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* Header & Navigasyon */
+/* Header & Navigation */
 header {
     width: 100%;
     background-color: #ffffff;
     border-bottom: 1px solid var(--border-color);
-    position: fixed; /* Üstte sabit kalır */
+    position: fixed; /* Stays fixed at the top */
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -57,7 +57,7 @@ header {
 header nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Menüyü ortala */
+    justify-content: center; /* Center the menu */
     padding: 15px 0;
 }
 
@@ -75,12 +75,12 @@ header nav ul li a {
 
 header nav ul li a:hover,
 header nav ul li a.active {
-    color: var(--primary-color); /* Aktif link rengi */
+    color: var(--primary-color); /* Active link color */
 }
 
-/* Hero (Hakkında) Bölümü */
-#hakkinda {
-    padding-top: 100px; /* Sabit header boşluğu */
+/* Hero (About) Section */
+#about {
+    padding-top: 100px; /* Fixed header offset */
     padding-bottom: 60px;
     min-height: 90vh;
     display: flex;
@@ -89,7 +89,7 @@ header nav ul li a.active {
 
 .hero-container {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Sol sütun 1 pay, sağ sütun 2 pay */
+    grid-template-columns: 1fr 2fr; /* Left col 1 part, right col 2 parts */
     gap: 50px;
     align-items: center;
 }
@@ -101,7 +101,7 @@ header nav ul li a.active {
 .profile-pic {
     width: 250px;
     height: 250px;
-    border-radius: 50%; /* Yuvarlak resim */
+    border-radius: 50%; /* Circular image */
     border: 5px solid var(--border-color);
     object-fit: cover;
     margin-bottom: 20px;
@@ -123,18 +123,18 @@ header nav ul li a.active {
     font-weight: 700;
 }
 
-/* Genel Bölüm Ayarları */
+/* General Section Settings */
 section {
     padding: 80px 0;
 }
 
 .section-bg {
-    background-color: var(--light-gray); /* Arka planı açık gri yap */
+    background-color: var(--light-gray); /* Light gray background */
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
 
-/* Kart Yapısı (Projeler & Başarılar için) */
+/* Card Structure (For Projects & Achievements) */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid */
@@ -146,7 +146,7 @@ section {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    overflow: hidden; /* Resmin karttan taşmasını engelle */
+    overflow: hidden; /* Prevents image from overflowing the card */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -158,7 +158,13 @@ section {
 .card-img {
     width: 100%;
     height: 250px;
-    object-fit: cover; /* Resmin orantısını koruyarak sığdır */
+    object-fit: cover; /* Keeps image aspect ratio */
+    background-color: #eee; /* Placeholder bg */
+}
+
+/* Support for video tag */
+video.card-img {
+    height: 250px;
 }
 
 .card-content {
@@ -190,10 +196,10 @@ section {
 }
 
 .card-links a:hover {
-    background-color: #0056b3; /* Mavi'nin koyu tonu */
+    background-color: #0056b3; /* Darker blue */
 }
 
-/* Yayınlar Bölümü */
+/* Publications Section */
 .publications-list {
     list-style: none;
     padding: 0;
@@ -205,6 +211,22 @@ section {
     border-radius: 8px;
     margin-bottom: 20px;
     border: 1px solid var(--border-color);
+}
+
+.publication-item {
+    display: flex; /* İçerikleri yan yana hizala */
+    align-items: flex-start; /* Üstten başla */
+    gap: 20px; /* Resim ile metin arasına boşluk */
+}
+
+.publication-preview-img {
+    width: 150px; /* Önizleme resminin genişliği */
+    height: 200px; /* Önizleme resminin yüksekliği */
+    object-fit: cover; /* Resmin oranını koru */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    flex-shrink: 0; /* Resmin küçülmesini engelle */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .publication-type {
@@ -229,6 +251,11 @@ section {
     color: var(--secondary-color);
     font-weight: 400;
 }
+.publication-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: -5px; /* Başlık ile arasındaki boşluğu ayarla */
+}
 
 
 /* Footer */
@@ -240,10 +267,10 @@ footer {
     margin-top: 40px;
 }
 
-/* Mobil Cihazlar İçin Responsive Ayarlar */
+/* Responsive (Mobile) */
 @media (max-width: 768px) {
     .hero-container {
-        grid-template-columns: 1fr; /* Sütunları alt alta getir */
+        grid-template-columns: 1fr; /* Stack columns */
         text-align: center;
     }
 
@@ -252,7 +279,7 @@ footer {
     }
 
     header nav ul {
-        flex-wrap: wrap; /* Menü elemanları sığmazsa alt satıra insin */
+        flex-wrap: wrap; /* Wrap menu items if they don't fit */
         padding: 10px;
     }
 
@@ -262,4 +289,13 @@ footer {
 
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
+
+    .publication-item {
+        flex-direction: column; /* Mobil'de alt alta hizala */
+        align-items: center; /* Ortala */
+        text-align: center;
+    }
+    .publication-item > div {
+        text-align: left; /* Metin sola hizalı kalsın */
+    }
 }
