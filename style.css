@@ -1,43 +1,26 @@
 /* General Settings */
 :root {
-    --primary-color: #007BFF; /* Main Accent Color (Blue) */
-    --secondary-color: #6c757d; /* Secondary Color (Gray) */
-    --text-color: #333; /* Main Text Color */
-    --light-gray: #f8f9fa; /* Background Color */
+    --primary-color: #007BFF;
+    --secondary-color: #6c757d;
+    --text-color: #333;
+    --light-gray: #f8f9fa;
     --border-color: #dee2e6;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
     font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: #fff;
 }
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-h1, h2, h3 {
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+h1, h2, h3 { margin-bottom: 20px; font-weight: 700; }
 h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; color: var(--primary-color); }
 h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; margin-top: 20px; margin-bottom: 10px; font-weight: 700; }
 p { margin-bottom: 15px; }
 ul { list-style: circle; margin-left: 20px; }
 a { color: var(--primary-color); text-decoration: none; }
@@ -48,23 +31,16 @@ header {
     width: 100%;
     background-color: #ffffff;
     border-bottom: 1px solid var(--border-color);
-    position: fixed; /* Stays fixed at the top */
-    top: 0;
-    z-index: 1000;
+    position: fixed; top: 0; z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 header nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Center the menu */
+    justify-content: center;
     padding: 15px 0;
 }
-
-header nav ul li {
-    margin: 0 20px;
-}
-
+header nav ul li { margin: 0 20px; }
 header nav ul li a {
     text-decoration: none;
     color: var(--secondary-color);
@@ -72,64 +48,37 @@ header nav ul li a {
     padding: 10px;
     transition: color 0.3s;
 }
-
 header nav ul li a:hover,
-header nav ul li a.active {
-    color: var(--primary-color); /* Active link color */
-}
+header nav ul li a.active { color: var(--primary-color); }
 
-/* Hero (About) Section */
+/* Hero (About) Section - GÜNCELLENDİ */
 #about {
-    padding-top: 100px; /* Fixed header offset */
-    padding-bottom: 60px;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
+    padding-top: 120px;  /* Header'dan sonraki boşluğu arttırdık */
+    padding-bottom: 80px; /* Alt boşluk */
+    /* min-height ve dikey ortalama kaldırıldı */
 }
-
 .hero-container {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Left col 1 part, right col 2 parts */
+    grid-template-columns: 1fr 2fr;
     gap: 50px;
-    align-items: center;
+    align-items: flex-start; /* Resim ve metni üste hizala */
 }
-
-.hero-left {
-    text-align: center;
-}
-
+.hero-left { text-align: center; }
 .profile-pic {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%; /* Circular image */
+    width: 250px; height: 250px;
+    border-radius: 50%;
     border: 5px solid var(--border-color);
     object-fit: cover;
     margin-bottom: 20px;
 }
-
-.subtitle {
-    font-size: 1.2rem;
-    color: var(--secondary-color);
-    font-weight: 300;
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-links a {
-    margin: 0 10px;
-    font-size: 1.1rem;
-    font-weight: 700;
-}
+.subtitle { font-size: 1.2rem; color: var(--secondary-color); font-weight: 300; }
+.social-links { margin-top: 20px; }
+.social-links a { margin: 0 10px; font-size: 1.1rem; font-weight: 700; }
 
 /* General Section Settings */
-section {
-    padding: 80px 0;
-}
-
+section { padding: 80px 0; }
 .section-bg {
-    background-color: var(--light-gray); /* Light gray background */
+    background-color: var(--light-gray);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
@@ -137,36 +86,34 @@ section {
 /* Card Structure (For Projects) */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
-
 .card {
     background-color: #fff;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    overflow: hidden; /* Prevents image from overflowing the card */
+    overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
-
-.card-img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover; /* Keeps image aspect ratio */
-    background-color: #eee; /* Placeholder bg */
+.project-card { cursor: pointer; }
+.click-to-see-more {
+    display: block;
+    margin-top: 10px;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.9rem;
 }
-
+.card-img { width: 100%; height: 250px; object-fit: cover; background-color: #eee; }
 video.card-img { height: 250px; }
 .card-content { padding: 25px; }
 .card-content h3 { color: var(--primary-color); }
 .card-content ul { margin-top: 15px; padding-left: 20px; }
-
 .card-links { margin-top: 20px; }
 .card-links a {
     display: inline-block;
@@ -191,193 +138,141 @@ video.card-img { height: 250px; }
 }
 .publication-item { display: flex; align-items: flex-start; gap: 20px; }
 .publication-item > [class*="Image"] {
-    display: block;
-    width: 150px; height: 200px;
-    object-fit: cover;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    flex-shrink: 0;
+    display: block; width: 150px; height: 200px;
+    object-fit: cover; border: 1px solid var(--border-color);
+    border-radius: 5px; flex-shrink: 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background-color: #eee;
-    font-size: 0.8rem; padding: 5px;
+    background-color: #eee; font-size: 0.8rem; padding: 5px;
     text-align: center; color: #777;
 }
 .publication-type {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: #fff;
-    padding: 3px 10px;
-    font-size: 0.8rem;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    font-weight: 700;
+    display: inline-block; background-color: var(--secondary-color);
+    color: #fff; padding: 3px 10px; font-size: 0.8rem;
+    border-radius: 12px; margin-bottom: 10px; font-weight: 700;
 }
 .publication-title { margin-bottom: 10px; }
 .publication-authors { font-style: italic; margin-bottom: 10px; }
 .publication-venue { color: var(--secondary-color); font-weight: 400; }
-.publication-description {
-    font-size: 0.95rem;
-    color: #555;
-    margin-top: -5px;
-}
+.publication-description { font-size: 0.95rem; color: #555; margin-top: -5px; }
 
-/* YENİ: Achievements Section Styles */
+/* Achievements Section Styles */
 .achievement-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 30px;
 }
-
 .achievement-item {
-    position: relative;
-    height: 300px;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative; height: 300px;
+    border-radius: 8px; overflow: hidden;
+    cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: box-shadow 0.3s ease;
 }
-
-.achievement-item:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-.achievement-item:hover .achievement-bg {
-    transform: scale(1.05); /* Hover'da resme zoom efekti */
-}
-
+.achievement-item:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+.achievement-item:hover .achievement-bg { transform: scale(1.05); }
 .achievement-bg {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
 }
-
 .achievement-title-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: absolute; bottom: 0; left: 0; right: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
     padding: 40px 20px 20px 20px;
 }
+.achievement-title-overlay h3 { color: #fff; margin: 0; font-size: 1.4rem; }
 
-.achievement-title-overlay h3 {
-    color: #fff;
-    margin: 0;
-    font-size: 1.4rem;
-}
-
-/* YENİ: Modal (Pop-up) Styles */
+/* Modal (Pop-up) Styles */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2000;
-    display: none; /* JS ile açılacak */
-    align-items: center;
-    justify-content: center;
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 2000; display: none;
+    align-items: center; justify-content: center;
     padding: 20px;
 }
-
-.modal.active {
-    display: flex;
-}
-
+.modal.active { display: flex; }
 .modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.75); /* Koyu arka plan */
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.75);
     backdrop-filter: blur(5px);
 }
-
 .modal-content {
-    position: relative;
-    z-index: 2001;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    max-width: 800px;
-    width: 100%;
-    max-height: 90vh;
+    position: relative; z-index: 2001;
+    background-color: #fff; padding: 30px;
+    border-radius: 8px; max-width: 800px;
+    width: 100%; max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
-
-.modal-content h3 {
-    color: var(--primary-color);
-    margin-top: 0;
-}
-
+.modal-content h3 { color: var(--primary-color); margin-top: 0; }
+.modal-content ul { margin-left: 20px; }
 .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 2.5rem;
-    color: #aaa;
-    cursor: pointer;
-    line-height: 1;
+    position: absolute; top: 10px; right: 15px;
+    background: none; border: none;
+    font-size: 2.5rem; color: #aaa;
+    cursor: pointer; line-height: 1;
 }
-.modal-close:hover {
-    color: #333;
-}
+.modal-close:hover { color: #333; }
 
-.modal-gallery {
+/* Proje Modalı için Özel Stiller */
+.modal-video-container {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #000;
+}
+.modal-video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+.modal-gallery-2col {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 fotoğraf yan yana */
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
     margin-top: 20px;
 }
+.modal-gallery-2col img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
 
+/* Achievement Galerisi (3'lü yapı için) */
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
 .modal-gallery img {
     width: 100%;
     border-radius: 5px;
     object-fit: cover;
 }
 
-/* Eğer galeride tek fotoğraf varsa tam genişlik kaplasın */
-.modal-gallery:has(img:only-child) {
-    grid-template-columns: 1fr;
-}
-
-
 /* Footer */
 footer {
-    text-align: center;
-    padding: 30px;
-    background-color: #333;
-    color: #f4f4f4;
+    text-align: center; padding: 30px;
+    background-color: #333; color: #f4f4f4;
     margin-top: 40px;
 }
 
 /* Responsive (Mobile) */
 @media (max-width: 768px) {
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+    .hero-container { grid-template-columns: 1fr; text-align: center; }
     .hero-right { text-align: left; }
     header nav ul { flex-wrap: wrap; padding: 10px; }
     header nav ul li { margin: 5px 10px; }
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
 
-    .publication-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+    .publication-item { flex-direction: column; align-items: center; text-align: center; }
     .publication-item > div { text-align: left; }
     .publication-item > [class*="Image"] { margin: 0 auto 15px auto; }
     
-    .modal-gallery {
-        grid-template-columns: 1fr; /* Mobilde fotoğraflar alt alta */
+    .modal-gallery,
+    .modal-gallery-2col {
+        grid-template-columns: 1fr; /* Mobilde tüm galeriler tek sütun */
     }
 }
