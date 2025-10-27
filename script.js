@@ -2,9 +2,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
-    const headerOffset = 80; // Sabit header'ın yüksekliği (px)
+    const headerOffset = 80; // Height of the fixed header (px)
 
-    // Sayfa kaydırma olayını dinle
+    // Listen for scroll events
     window.addEventListener('scroll', () => {
         let current = '';
 
@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Aktif linki ayarla
+        // Set the active link
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + current) {
@@ -23,10 +23,10 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Eğer en üstteysek "Hakkında" linkini aktif yap
+        // If at the very top, set 'About' as active
         if (pageYOffset < sections[0].offsetTop - headerOffset) {
             navLinks.forEach(link => link.classList.remove('active'));
-            document.querySelector('.nav-link[href="#hakkinda"]').classList.add('active');
+            document.querySelector('.nav-link[href="#about"]').classList.add('active');
         }
     });
 });
