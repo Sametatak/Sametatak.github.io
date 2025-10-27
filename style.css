@@ -63,14 +63,13 @@ header nav ul li a.active { color: var(--primary-color); }
     align-items: flex-start;
 }
 .hero-left { text-align: center; }
-/* Profil Resmi - GÜNCELLENDİ */
 .profile-pic {
     width: 250px;
     height: 250px;
-    border-radius: 50%; /* Tekrar yuvarlak yapıyoruz, ancak position ile oynayacağız */
+    border-radius: 50%;
     border: 5px solid var(--border-color);
     object-fit: cover;
-    object-position: center -20px; /* Yukarı doğru kaydırmak için negatif değer */
+    object-position: center -20px; /* Resmi -20px yukarı kaydırır */
     margin-bottom: 20px;
 }
 .subtitle { font-size: 1.2rem; color: var(--secondary-color); font-weight: 300; }
@@ -139,14 +138,6 @@ video.card-img { height: 250px; }
     border: 1px solid var(--border-color);
 }
 .publication-item { display: flex; align-items: flex-start; gap: 20px; }
-.publication-item > [class*="Image"] {
-    display: block; width: 150px; height: 200px;
-    object-fit: cover; border: 1px solid var(--border-color);
-    border-radius: 5px; flex-shrink: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background-color: #eee; font-size: 0.8rem; padding: 5px;
-    text-align: center; color: #777;
-}
 .publication-type {
     display: inline-block; background-color: var(--secondary-color);
     color: #fff; padding: 3px 10px; font-size: 0.8rem;
@@ -157,7 +148,7 @@ video.card-img { height: 250px; }
 .publication-venue { color: var(--secondary-color); font-weight: 400; }
 .publication-description { font-size: 0.95rem; color: #555; margin-top: -5px; }
 
-/* Achievements Section Styles - Düzeltildi */
+/* Achievements Section Styles */
 .achievement-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -165,9 +156,9 @@ video.card-img { height: 250px; }
 }
 .achievement-item {
     position: relative;
-    height: 300px; /* Sabit yükseklik, taşmayı engeller */
+    height: 300px;
     border-radius: 8px;
-    overflow: hidden; /* Taşmayı gizle */
+    overflow: hidden;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: box-shadow 0.3s ease;
@@ -181,8 +172,102 @@ video.card-img { height: 250px; }
 .achievement-bg {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Resmi kutuya sığdırır, orantıyı korur */
+    object-fit: cover;
     transition: transform 0.4s ease;
 }
 .achievement-title-overlay {
-    position: absolute; bottom
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    padding: 40px 20px 20px 20px;
+}
+.achievement-title-overlay h3 { color: #fff; margin: 0; font-size: 1.4rem; }
+
+/* Modal (Pop-up) Styles */
+.modal {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 2000; display: none;
+    align-items: center; justify-content: center;
+    padding: 20px;
+}
+.modal.active { display: flex; }
+.modal-overlay {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    backdrop-filter: blur(5px);
+}
+.modal-content {
+    position: relative; z-index: 2001;
+    background-color: #fff; padding: 30px;
+    border-radius: 8px; max-width: 800px;
+    width: 100%; max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.modal-content h3 { color: var(--primary-color); margin-top: 0; }
+.modal-content ul { margin-left: 20px; }
+.modal-close {
+    position: absolute; top: 10px; right: 15px;
+    background: none; border: none;
+    font-size: 2.5rem; color: #aaa;
+    cursor: pointer; line-height: 1;
+}
+.modal-close:hover { color: #333; }
+
+/* Proje Modalı için Özel Stiller */
+.modal-video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.modal-video-container {
+    width: 100%;
+    background-color: #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.modal-video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Achievement Galerisi (3'lü yapı için) */
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+.modal-gallery img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    text-align: center; padding: 30px;
+    background-color: #333; color: #f4f4f4;
+    margin-top: 40px;
+}
+
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+    .hero-container { grid-template-columns: 1fr; text-align: center; }
+    .hero-right { text-align: left; }
+    header nav ul { flex-wrap: wrap; padding: 10px; }
+    header nav ul li { margin: 5px 10px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+
+    .publication-item { flex-direction: column; align-items: center; text-align: center; }
+    .publication-item > div { text-align: left; }
+    
+    .modal-gallery,
+    .modal-video-grid {
+        grid-template-columns: 1fr;
+    }
+}
