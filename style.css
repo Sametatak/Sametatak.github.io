@@ -69,7 +69,7 @@ header nav ul li a.active { color: var(--primary-color); }
     border-radius: 50%;
     border: 5px solid var(--border-color);
     object-fit: cover;
-    object-position: center +20px;
+    object-position: center -100px;
     margin-bottom: 20px;
 }
 .subtitle { font-size: 1.2rem; color: var(--secondary-color); font-weight: 300; }
