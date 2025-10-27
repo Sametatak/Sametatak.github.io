@@ -219,7 +219,9 @@ video.card-img {
     gap: 20px; /* Resim ile metin arasına boşluk */
 }
 
-.publication-preview-img {
+/*  etiketlerini resim gibi biçimlendir */
+.publication-item > [class*="Image"] {
+    display: block;
     width: 150px; /* Önizleme resminin genişliği */
     height: 200px; /* Önizleme resminin yüksekliği */
     object-fit: cover; /* Resmin oranını koru */
@@ -227,6 +229,11 @@ video.card-img {
     border-radius: 5px;
     flex-shrink: 0; /* Resmin küçülmesini engelle */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #eee; /* Görsel yüklenmezse diye arka plan */
+    font-size: 0.8rem; /* İçindeki metni küçült */
+    padding: 5px;
+    text-align: center;
+    color: #777;
 }
 
 .publication-type {
@@ -297,5 +304,9 @@ footer {
     }
     .publication-item > div {
         text-align: left; /* Metin sola hizalı kalsın */
+    }
+    
+    .publication-item > [class*="Image"] {
+        margin: 0 auto 15px auto; /* Mobil'de ortala ve boşluk bırak */
     }
 }
