@@ -27,12 +27,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. YENİ: Modal (Pop-up) Pencere Fonksiyonu
+    // 2. Modal (Pop-up) Pencere Fonksiyonu
     const modalOpenButtons = document.querySelectorAll('[data-target-modal]');
     const modalCloseButtons = document.querySelectorAll('.modal-close');
     const modalOverlays = document.querySelectorAll('.modal-overlay');
 
-    // Modal açma butonları (Başarı kutucukları)
+    // Modal açma butonları (Başarı kutucukları + Proje Kartı)
     modalOpenButtons.forEach(button => {
         button.addEventListener('click', () => {
             const targetModalId = button.getAttribute('data-target-modal');
