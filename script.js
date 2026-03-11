@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. YENİ: Robot Projesi Video Slider'ı
+    // 3. Robot Projesi Video Slider'ı
     const robotModal = document.querySelector('#robot-modal');
     if (robotModal) {
         const slides = robotModal.querySelectorAll('.video-slide');
