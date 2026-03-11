@@ -1,2 +1,2 @@
 # Sametatak.github.io
-my page
+my page : Sametatak.github.io
