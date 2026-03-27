@@ -70,7 +70,7 @@ header nav ul li a.active { color: var(--primary-color); }
     border: 5px solid var(--border-color);
     object-fit: cover;
     object-position: center -85px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 .subtitle { font-size: 1.2rem; color: var(--secondary-color); font-weight: 300; }
 .social-links { margin-top: 20px; }
