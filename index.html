@@ -28,6 +28,11 @@
                     <img src="assets/linkedin_pp.jpg" alt="Samet Atak Profile Picture" class="profile-pic">
                     <h1>Samet Atak</h1>
                     <p class="subtitle">ITU Control & Automation Eng. Student<br>Machine Learning & Autonomous Systems</p>
+                    <div class="hero-tags">
+                        <span>ROS 2</span>
+                        <span>MPPI</span>
+                        <span>Autonomous Navigation</span>
+                    </div>
                     <div class="social-links">
                         <a href="https://github.com/Sametatak" target="_blank">GitHub</a>
                         <a href="https://linkedin.com/in/samet-atak-506980250" target="_blank">LinkedIn</a>
@@ -71,7 +76,34 @@
             <div class="container">
                 <h2>GitHub Repositories</h2>
                 <div class="card-grid">
-                    
+
+                    <div class="card repo-card featured-repo-card" data-target-modal="#mppi-modal">
+                        <div class="media-shell">
+                            <img src="assets/mppi-ros-overview.png" alt="MPPI ROS2 navigation in RViz and Gazebo" class="card-img">
+                            <span class="image-badge">ROS 2 + MPPI</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>
+                                <a href="https://github.com/Sametatak/Mppi_ros" target="_blank" style="color: inherit; text-decoration: none;">
+                                    MPPI ROS2 Navigation Planner
+                                </a>
+                            </h3>
+                            <p>
+                                A ROS2 navigation experiment combining a custom costmap, simple global planner, pure-pursuit lookahead, and an MPPI local controller in RViz/Gazebo.
+                                <span class="click-to-see-more">Click to see simulation details...</span>
+                            </p>
+                            <div class="repo-tags">
+                                <span>ROS2</span>
+                                <span>Gazebo</span>
+                                <span>RViz</span>
+                                <span>Control</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/Sametatak/Mppi_ros" target="_blank">View Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <a href="https://github.com/Sametatak/cartpole-control-mpc-rl" target="_blank">
                             <img src="assets/repo-cartpole.gif" alt="Cartpole Control" class="card-img">
@@ -102,7 +134,7 @@
                                 </a>
                             </h3>
                             <p>
-                                Implementations of leg control for trot walking and stair climbing for a quadraped robot in gazebo
+                                Implementations of leg control for trot walking and stair climbing for a quadruped robot in Gazebo.
                             </p>
                             <div class="card-links">
                                 <a href="https://github.com/Sametatak/legged_control" target="_blank">View Repository</a>
@@ -121,7 +153,7 @@
                                 </a>
                             </h3>
                             <p>
-                                Implementation of rgbd and lidar slam in gazebo simulation enviroment.
+                                Implementation of RGB-D and lidar SLAM in a Gazebo simulation environment.
                             </p>
                             <div class="card-links">
                                 <a href="https://github.com/Sametatak/princebles_of_robot_hw" target="_blank">View Repository</a>
@@ -156,7 +188,7 @@
                             <div>
                                 <span class="publication-type">Paper</span>
                                 <h3 class="publication-title">Real-Time Face Recognition and Tracking in Matlab</h3>
-                                <p class="publication-authors"><strong>Samet Atak</strong>, Üsame Delihasan</p>
+                                <p class="publication-authors"><strong>Samet Atak</strong>, &Uuml;same Delihasan</p>
                                 <p class="publication-venue">IEEE Formatted Project Paper (2025)</p>
                                 <p class="publication-description">This paper explores the development of a real-time face recognition and tracking system implemented in Matlab, focusing on efficient algorithms for detection, identification, and continuous tracking of faces within a video stream.</p>
                                 <div class="card-links">
@@ -228,6 +260,53 @@
                 <li>Utilized Intel RealSense cameras, visual odometry, and GPS-IMU for precise localization.</li>
                 <li>Enabled autonomous waypoint navigation to GPS coordinates in real-world environments.</li>
             </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="mppi-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-content-wide">
+            <button class="modal-close">&times;</button>
+            <h3>Repository Spotlight: MPPI ROS2 Navigation Planner</h3>
+
+            <div class="mppi-showcase">
+                <img src="assets/mppi-ros-overview.png" alt="RViz and Gazebo view of the MPPI ROS2 planner">
+                <div class="mppi-notes">
+                    <p>
+                        This repository packages a ROS2 navigation prototype around a Python MPPI controller. The stack publishes visualization topics for sampled rollouts, the selected trajectory, costmap data, and target markers so the behavior can be inspected directly in RViz while Gazebo runs the scene.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Diff-drive kinematic model with sampled velocity commands.</li>
+                        <li>Cost function balancing target distance, heading error, and obstacle cost.</li>
+                        <li>Simple global planner and pure-pursuit lookahead target selection.</li>
+                        <li>Launch flow for costmap, global planner, MPPI controller, and RViz.</li>
+                    </ul>
+                    <div class="card-links">
+                        <a href="https://github.com/Sametatak/Mppi_ros" target="_blank">Open on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="command-strip">
+                <code>ros2 launch my_mpc_planner start_world.launch.py</code>
+                <code>ros2 launch my_mpc_planner navigation2_mppi.launch.py</code>
+                <code>ros2 launch my_mpc_planner mppi_launch.py</code>
+            </div>
+
+            <div class="mppi-gallery">
+                <div class="mppi-detail-tile">
+                    <span>Controller</span>
+                    <p>Samples candidate velocity rollouts, scores them, and shifts the nominal control sequence forward each cycle.</p>
+                </div>
+                <div class="mppi-detail-tile">
+                    <span>Visualization</span>
+                    <p>Publishes rollout markers, best trajectory, goal marker, target marker, and occupancy grid views for RViz.</p>
+                </div>
+                <div class="mppi-detail-tile">
+                    <span>Simulation</span>
+                    <p>Pairs Gazebo obstacle scenes with RViz inspection to tune navigation behavior in a repeatable environment.</p>
+                </div>
+            </div>
         </div>
     </div>
 

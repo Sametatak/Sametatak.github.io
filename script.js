@@ -64,15 +64,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // 3. Robot Projesi Video Slider'ı
     const robotModal = document.querySelector('#robot-modal');
+    let currentRobotSlide = 0;
+    let showRobotSlide = () => {};
+
     if (robotModal) {
         const slides = robotModal.querySelectorAll('.video-slide');
         const prevBtn = robotModal.querySelector('.prev-btn');
         const nextBtn = robotModal.querySelector('.next-btn');
-        let currentSlide = 0;
         const numSlides = slides.length;
 
         // Belirli bir slide'ı gösteren fonksiyon
-        const showRobotSlide = (index) => {
+        showRobotSlide = (index) => {
             slides.forEach((slide, i) => {
                 const video = slide.querySelector('video');
                 if (i === index) {
@@ -93,20 +95,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // İleri butonu
         nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % numSlides;
-            showRobotSlide(currentSlide);
+            currentRobotSlide = (currentRobotSlide + 1) % numSlides;
+            showRobotSlide(currentRobotSlide);
         });
 
         // Geri butonu
         prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + numSlides) % numSlides;
-            showRobotSlide(currentSlide);
+            currentRobotSlide = (currentRobotSlide - 1 + numSlides) % numSlides;
+            showRobotSlide(currentRobotSlide);
         });
     }
 
     // Modal açma butonları (SLIDER BAŞLATMA EKLENDİ)
     modalOpenButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (event) => {
+            if (event.target.closest('a')) return;
+
             const targetModalId = button.getAttribute('data-target-modal');
             const modal = document.querySelector(targetModalId);
             if (modal) {
@@ -114,8 +118,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 
                 // Eğer robot modalı açılıyorsa, slider'ı ilk slayttan başlat
                 if (targetModalId === '#robot-modal') {
-                    currentSlide = 0; // Her açılışta başa sar
-                    showRobotSlide(currentSlide);
+                    currentRobotSlide = 0;
+                    showRobotSlide(currentRobotSlide);
                 }
             }
         });
