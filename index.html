@@ -1,345 +1,218 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samet Atak | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semantic Robotics | Physical AI ve Akıllı Robotik Sistemler</title>
+  <meta name="description" content="Semantic Robotics, Physical AI teknolojileriyle robot kolları, insansı robotlar ve otonom sistemler geliştirir.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Semantic Robotics | Fiziksel Dünyayı Akıllandırıyoruz">
+  <meta property="og:description" content="Physical AI ve yeni nesil robotik sistemler geliştiriyoruz.">
+  <meta name="theme-color" content="#f7f9fc">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c1c33'/%3E%3Cpath d='M18 20h18a10 10 0 0 1 0 20H27a7 7 0 0 0 0 14h19' fill='none' stroke='%233b82f6' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='18' cy='20' r='5' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">İçeriğe geç</a>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about" class="nav-link active">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#repositories" class="nav-link">Repositories</a></li>
-                <li><a href="#publications" class="nav-link">Publications</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="about">
-            <div class="container hero-container">
-                <div class="hero-left">
-                    <img src="assets/linkedin_pp.jpg" alt="Samet Atak Profile Picture" class="profile-pic">
-                    <h1>Samet Atak</h1>
-                    <p class="subtitle">ITU Control & Automation Eng. Student<br>Machine Learning & Autonomous Systems</p>
-                    <div class="hero-tags">
-                        <span>ROS 2</span>
-                        <span>MPPI</span>
-                        <span>Autonomous Navigation</span>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Sametatak" target="_blank">GitHub</a>
-                        <a href="https://linkedin.com/in/samet-atak-506980250" target="_blank">LinkedIn</a>
-                        <a href="mailto:sametatakwork@gmail.com">Email</a>
-                    </div>
-                </div>
-                <div class="hero-right">
-                    <h2>About Me</h2>
-                    <p>
-                       As a senior Control and Automation Engineering student at Istanbul Technical University (ITU), I have focused my work on autonomous robotic systems and machine learning. Through academic research at the University of Kassel (Germany) and industrial projects at Machine Arge, I gained experience in transforming theoretical foundations into functional field systems. I demonstrated my competence in ROS, embedded systems, and deep learning by securing 1st place in the international NJORD competition. I aim to contribute value as an engineer to innovative projects developing autonomous technologies.
-                    </p>
-                    <p>
-                        I served as a Machine Learning Researcher at the University of Kassel, Germany, where I focused on automated hyperparameter tuning for ensemble regression models and contributed to a research paper on the topic.
-                    </p>
-                    <p>
-                        I also have hands-on experience as an Autonomous Robot Developer at Machine Arge. In this role, I developed autonomous algorithms using ROS, implemented path planning and obstacle avoidance, and worked with embedded systems (STM32) and various sensors (Intel RealSense, GPS-IMU) to achieve robust real-time performance.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section-bg">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="card-grid">
-                    <div class="card project-card" data-target-modal="#robot-modal">
-                        <img src="assets/robot.jpg" alt="Autonomous Robot Project" class="card-img">
-                        <div class="card-content">
-                            <h3>Autonomous Robot Developer (Machine Arge)</h3>
-                            <p>
-                                Hands-on experience developing autonomous navigation and perception systems (TUBITAK supported project).
-                                <span class="click-to-see-more">Click to see details...</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<section id="repositories">
-            <div class="container">
-                <h2>GitHub Repositories</h2>
-                <div class="card-grid">
-
-                    <div class="card repo-card featured-repo-card" data-target-modal="#mppi-modal">
-                        <div class="media-shell">
-                            <img src="assets/mppi-ros-overview.png" alt="MPPI ROS2 navigation in RViz and Gazebo" class="card-img">
-                            <span class="image-badge">ROS 2 + MPPI</span>
-                        </div>
-                        <div class="card-content">
-                            <h3>
-                                <a href="https://github.com/Sametatak/Mppi_ros" target="_blank" style="color: inherit; text-decoration: none;">
-                                    MPPI ROS2 Navigation Planner
-                                </a>
-                            </h3>
-                            <p>
-                                A ROS2 navigation experiment combining a custom costmap, simple global planner, pure-pursuit lookahead, and an MPPI local controller in RViz/Gazebo.
-                                <span class="click-to-see-more">Click to see simulation details...</span>
-                            </p>
-                            <div class="repo-tags">
-                                <span>ROS2</span>
-                                <span>Gazebo</span>
-                                <span>RViz</span>
-                                <span>Control</span>
-                            </div>
-                            <div class="card-links">
-                                <a href="https://github.com/Sametatak/Mppi_ros" target="_blank">View Repository</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <a href="https://github.com/Sametatak/cartpole-control-mpc-rl" target="_blank">
-                            <img src="assets/repo-cartpole.gif" alt="Cartpole Control" class="card-img">
-                        </a>
-                        <div class="card-content">
-                            <h3>
-                                <a href="https://github.com/Sametatak/cartpole-control-mpc-rl" target="_blank" style="color: inherit; text-decoration: none;">
-                                    Cartpole Control (MPC & RL)
-                                </a>
-                            </h3>
-                            <p>
-                                Cartpole (inverted pendulum) balancing algorithms developed using Model Predictive Control (MPC) and Reinforcement Learning techniques.
-                            </p>
-                            <div class="card-links">
-                                <a href="https://github.com/Sametatak/cartpole-control-mpc-rl" target="_blank">View Repository</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <a href="https://github.com/Sametatak/legged_control" target="_blank">
-                            <img src="assets/repo-legged.gif" alt="Legged Robot Control" class="card-img">
-                        </a>
-                        <div class="card-content">
-                            <h3>
-                                <a href="https://github.com/Sametatak/legged_control" target="_blank" style="color: inherit; text-decoration: none;">
-                                    Legged Robot Control
-                                </a>
-                            </h3>
-                            <p>
-                                Implementations of leg control for trot walking and stair climbing for a quadruped robot in Gazebo.
-                            </p>
-                            <div class="card-links">
-                                <a href="https://github.com/Sametatak/legged_control" target="_blank">View Repository</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <a href="https://github.com/Sametatak/princebles_of_robot_hw" target="_blank">
-                            <img src="assets/repo-hardware.png" alt="Principles of Robot Hardware" class="card-img">
-                        </a>
-                        <div class="card-content">
-                            <h3>
-                                <a href="https://github.com/Sametatak/princebles_of_robot_hw" target="_blank" style="color: inherit; text-decoration: none;">
-                                    RGBD and LIDAR SLAM
-                                </a>
-                            </h3>
-                            <p>
-                                Implementation of RGB-D and lidar SLAM in a Gazebo simulation environment.
-                            </p>
-                            <div class="card-links">
-                                <a href="https://github.com/Sametatak/princebles_of_robot_hw" target="_blank">View Repository</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="publications" class="section-bg">
-            <div class="container">
-                <h2>Academic Papers & Reports</h2>
-                <ul class="publications-list">
-                    <li>
-                        <div class="publication-item">
-                            <div>
-                                <span class="publication-type">Technical Report</span>
-                                <h3 class="publication-title">Advancing Ensemble Regression: Automated Hyperparameter Tuning of the Diversity-Accuracy Trade-Off in Sign Diversity Metric</h3>
-                                <p class="publication-authors"><strong>Samet Atak</strong></p>
-                                <p class="publication-venue">Machine Learning Researcher Internship Report (MRT-report3), University of Kassel, Germany (2025)</p>
-                                <p class="publication-description">This report details research into optimizing ensemble regression models by automatically tuning hyperparameters to achieve a better balance between model diversity and accuracy, utilizing a novel sign diversity metric.</p>
-                                <div class="card-links">
-                                    <a href="assets/MRT-report3.pdf" target="_blank">View Report (PDF)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="publication-item">
-                            <div>
-                                <span class="publication-type">Paper</span>
-                                <h3 class="publication-title">Real-Time Face Recognition and Tracking in Matlab</h3>
-                                <p class="publication-authors"><strong>Samet Atak</strong>, &Uuml;same Delihasan</p>
-                                <p class="publication-venue">IEEE Formatted Project Paper (2025)</p>
-                                <p class="publication-description">This paper explores the development of a real-time face recognition and tracking system implemented in Matlab, focusing on efficient algorithms for detection, identification, and continuous tracking of faces within a video stream.</p>
-                                <div class="card-links">
-                                    <a href="assets/IEEE_Paper.pdf" target="_blank">View Paper (PDF)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="achievements">
-            <div class="container">
-                <h2>Achievements</h2>
-                <div class="achievement-grid">
-                    
-                    <div class="achievement-item" data-target-modal="#njord-modal">
-                        <img src="assets/njord-1.jpg" alt="NJORD Challenge" class="achievement-bg">
-                        <div class="achievement-title-overlay">
-                            <h3>Winner - NJORD The Autonomous Ship Challenge (2023)</h3>
-                        </div>
-                    </div>
-
-                    <div class="achievement-item" data-target-modal="#teknofest-modal">
-                        <img src="assets/teknofest.jpg" alt="Teknofest TIKA" class="achievement-bg">
-                        <div class="achievement-title-overlay">
-                            <h3>Finalist - Teknofest TIKA Competition</h3>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Samet Atak. All rights reserved.</p>
-    </footer>
-
-    <div class="modal" id="robot-modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h3>Project Spotlight: Autonomous Robot Developer</h3>
-            
-            <div class="modal-slider-container">
-                <div class="video-slider">
-                    <div class="video-slide active">
-                        <video src="assets/robot-video-1.mp4" controls autoplay muted loop playsinline>
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="video-slide">
-                        <video src="assets/robot-video-2.mp4" controls autoplay muted loop playsinline>
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <button class="slider-btn prev-btn">&lt;</button>
-                <button class="slider-btn next-btn">&gt;</button>
-            </div>
-            
-            <h4>Key Features & Responsibilities:</h4>
-            <ul>
-                <li>Developed embedded systems for STM32-based microcontrollers.</li>
-                <li>Implemented autonomous navigation algorithms (path planning, obstacle avoidance) using ROS.</li>
-                <li>Utilized Intel RealSense cameras, visual odometry, and GPS-IMU for precise localization.</li>
-                <li>Enabled autonomous waypoint navigation to GPS coordinates in real-world environments.</li>
-            </ul>
-        </div>
+  <header class="site-header" data-header>
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Semantic Robotics ana sayfa">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Semantic <strong>Robotics</strong></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+        <span class="sr-only">Menüyü aç</span><i></i><i></i>
+      </button>
+      <nav id="site-nav" class="nav" aria-label="Ana menü" data-nav>
+        <a href="#yaklasim">Yaklaşım</a>
+        <a href="#ilk-urun">İlk Uygulama</a>
+        <a href="#teknoloji">Teknoloji</a>
+        <a href="#ekip">Ekip</a>
+        <a class="nav-contact" href="#iletisim">İletişim</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="modal" id="mppi-modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content modal-content-wide">
-            <button class="modal-close">&times;</button>
-            <h3>Repository Spotlight: MPPI ROS2 Navigation Planner</h3>
-
-            <div class="mppi-showcase">
-                <img src="assets/mppi-ros-overview.png" alt="RViz and Gazebo view of the MPPI ROS2 planner">
-                <div class="mppi-notes">
-                    <p>
-                        This repository packages a ROS2 navigation prototype around a Python MPPI controller. The stack publishes visualization topics for sampled rollouts, the selected trajectory, costmap data, and target markers so the behavior can be inspected directly in RViz while Gazebo runs the scene.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Diff-drive kinematic model with sampled velocity commands.</li>
-                        <li>Cost function balancing target distance, heading error, and obstacle cost.</li>
-                        <li>Simple global planner and pure-pursuit lookahead target selection.</li>
-                        <li>Launch flow for costmap, global planner, MPPI controller, and RViz.</li>
-                    </ul>
-                    <div class="card-links">
-                        <a href="https://github.com/Sametatak/Mppi_ros" target="_blank">Open on GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="command-strip">
-                <code>ros2 launch my_mpc_planner start_world.launch.py</code>
-                <code>ros2 launch my_mpc_planner navigation2_mppi.launch.py</code>
-                <code>ros2 launch my_mpc_planner mppi_launch.py</code>
-            </div>
-
-            <div class="mppi-gallery">
-                <div class="mppi-detail-tile">
-                    <span>Controller</span>
-                    <p>Samples candidate velocity rollouts, scores them, and shifts the nominal control sequence forward each cycle.</p>
-                </div>
-                <div class="mppi-detail-tile">
-                    <span>Visualization</span>
-                    <p>Publishes rollout markers, best trajectory, goal marker, target marker, and occupancy grid views for RViz.</p>
-                </div>
-                <div class="mppi-detail-tile">
-                    <span>Simulation</span>
-                    <p>Pairs Gazebo obstacle scenes with RViz inspection to tune navigation behavior in a repeatable environment.</p>
-                </div>
-            </div>
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span></span> Physical AI · Robotics</div>
+          <h1>Fiziksel Dünyayı<br><em>Akıllandırıyoruz.</em></h1>
+          <p>Physical AI teknolojileriyle robot kolları, insansı robotlar ve otonom sistemleri gerçek dünya görevlerini anlayabilen ve gerçekleştirebilen akıllı sistemlere dönüştürüyoruz.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#vizyon">Vizyonumuz</a>
+            <a class="button secondary" href="#ekip">Ekibimiz</a>
+          </div>
+          <div class="hero-note" aria-label="Odak alanları">
+            <span>Algılama</span><i></i><span>Karar</span><i></i><span>Hareket</span>
+          </div>
         </div>
-    </div>
-
-    <div class="modal" id="njord-modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h3>Winner - NJORD The Autonomous Ship Challenge (2023)</h3>
-            <p>
-                As a ROS Team Member of ITU Autobee, we achieved first place in the 2023 NJORD Autonomous Ship Challenge held in Norway. This involved developing a fully autonomous vessel to compete in complex navigation, obstacle avoidance, and docking tasks.
-            </p>
-            <div class="modal-gallery">
-                <img src="assets/njord-1.jpg" alt="NJORD Competition Photo 1">
-                <img src="assets/njord-2.jpg" alt="NJORD Competition Photo 2">
-                <img src="assets/njord-3.jpg" alt="NJORD Competition Photo 3">
-            </div>
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="visual-label"><span>01</span> Gerçek dünya robotikleri</div>
+          <img src="assets/robotics-hero.webp" alt="Robot kolları, mobil robot ve insansı robot bulunan modern bir robotik laboratuvarı" width="1400" height="876">
+          <div class="vision-corner" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <div class="visual-caption">Robotik manipülasyon · Otonom sistemler · İnsan-robot iş birliği</div>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div class="modal" id="teknofest-modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h3>Finalist - Teknofest TIKA Competition</h3>
-            <p>
-                With the ITU Autobee team, we successfully qualified as finalists in the Teknofest TIKA Competition, developing innovative autonomous solutions for challenging scenarios.
-            </p>
-            <div class="modal-gallery">
-                <img src="assets/teknofest.jpg" alt="Teknofest Competition Photo">
-            </div>
+    <section id="yaklasim" class="section what-we-do">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-index">01 / Yaklaşım</span>
+          <h2>Robotlara yalnızca hareket etmeyi değil, <em>görev yapmayı</em> öğretiyoruz.</h2>
+          <p>Semantic Robotics; klasik robot kontrolünü kamera ve sensör tabanlı algılama, yapay zekâ, imitation learning ve yeni nesil Physical AI modelleriyle birleştirerek değişken gerçek dünya koşullarında çalışabilecek robotik sistemler geliştirir.</p>
         </div>
-    </div>
+        <div class="card-grid three">
+          <article class="capability-card reveal">
+            <span class="card-number">01</span>
+            <div class="line-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M9 37h30M15 37v-8l7-5 5-12 7 3-5 13 5 4v5M25 12l-4-3"/></svg></div>
+            <h3>Robotik Manipülasyon</h3>
+            <p>Robot kollarıyla kavrama, taşıma, servis ve fiziksel görev otomasyonu.</p>
+          </article>
+          <article class="capability-card reveal" data-delay="1">
+            <span class="card-number">02</span>
+            <div class="line-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="11" r="5"/><path d="M17 22l7-4 7 4v9l5 8M17 22v9l-5 8M24 18v23"/></svg></div>
+            <h3>Humanoid Robotics</h3>
+            <p>İnsansı robotların servis, lojistik, etkinlik ve saha görevlerinde kullanılması.</p>
+          </article>
+          <article class="capability-card reveal" data-delay="2">
+            <span class="card-number">03</span>
+            <div class="line-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="11" cy="24" r="5"/><circle cx="37" cy="12" r="5"/><circle cx="37" cy="36" r="5"/><path d="M16 24h8m0 0 8-10m-8 10 8 10"/></svg></div>
+            <h3>Physical AI Entegrasyonu</h3>
+            <p>Algılama, karar verme ve robot kontrol katmanlarının uçtan uca entegrasyonu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="ilk-urun" class="section product-section">
+      <div class="container product-grid">
+        <div class="product-copy reveal">
+          <span class="section-index light">02 / İlk uygulama</span>
+          <h2>İlk Adım: Otonom Servis Robotları</h2>
+          <p class="lead">İlk ticari odağımız kahve hazırlama ve yiyecek-içecek servis görevlerini gerçekleştirebilen çift robot kollu otonom istasyonlar geliştirmek.</p>
+          <p>Ancak bu ürün nihai hedefimiz değil. Bu sistem, geliştirdiğimiz Physical AI altyapısının gerçek dünyadaki ilk uygulamalarından biri olacak.</p>
+        </div>
+        <div class="system-panel reveal" data-delay="1">
+          <div class="panel-top"><span>Sistem döngüsü</span><span class="live-dot">Uçtan uca</span></div>
+          <div class="flow" aria-label="Algılamadan görev tamamlamaya sistem akışı">
+            <div class="flow-step"><b>01</b><span>Algılama</span><small>Kamera + sensör</small></div>
+            <i aria-hidden="true"></i>
+            <div class="flow-step"><b>02</b><span>Yapay Zekâ</span><small>Çevreyi anlama</small></div>
+            <i aria-hidden="true"></i>
+            <div class="flow-step"><b>03</b><span>Karar</span><small>Görev planlama</small></div>
+            <i aria-hidden="true"></i>
+            <div class="flow-step"><b>04</b><span>Robot Hareketi</span><small>Güvenli kontrol</small></div>
+            <i aria-hidden="true"></i>
+            <div class="flow-step accent"><b>05</b><span>Görev Tamamlama</span><small>Gerçek dünya çıktısı</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vizyon" class="section vision-section">
+      <div class="container">
+        <div class="split-heading reveal">
+          <div><span class="section-index">03 / Uzun vadeli vizyon</span><h2>Tek Bir Ürün Değil,<br><em>Bir Robotik Teknoloji Şirketi</em></h2></div>
+          <p>Uzun vadede hedefimiz; robot kolları, mobil robotlar ve insansı robotlar üzerinde çalışabilecek Physical AI çözümleri geliştirerek servis, üretim, lojistik, denetim ve insan için riskli çalışma ortamlarında uçtan uca robotik sistemler sunmak.</p>
+        </div>
+        <div class="application-grid">
+          <article class="app-card reveal"><span>01</span><h3>Servis &amp; Horeca</h3><p>Tekrarlanabilir servis görevlerinde güvenli ve tutarlı operasyon.</p></article>
+          <article class="app-card reveal" data-delay="1"><span>02</span><h3>Üretim</h3><p>Değişken iş akışlarına uyum sağlayan esnek robotik sistemler.</p></article>
+          <article class="app-card reveal" data-delay="2"><span>03</span><h3>Lojistik</h3><p>Algılama destekli taşıma, ayırma ve iç lojistik görevleri.</p></article>
+          <article class="app-card reveal"><span>04</span><h3>Etkinlik Robotları</h3><p>İnsanlarla doğal ve güvenli biçimde etkileşen sistemler.</p></article>
+          <article class="app-card reveal" data-delay="1"><span>05</span><h3>Tehlikeli Ortamlar</h3><p>İnsan için riskli koşullarda uzaktan veya otonom görev icrası.</p></article>
+          <article class="app-card reveal" data-delay="2"><span>06</span><h3>Humanoid Robotics</h3><p>İnsan ortamlarına uyumlu, genel amaçlı robotik yetenekler.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section opportunity-section">
+      <div class="container opportunity-grid">
+        <div class="opportunity-mark reveal" aria-hidden="true">
+          <div class="orbit"><span></span><span></span><span></span><b>TR</b></div>
+          <small>Physical AI ekosistemi</small>
+        </div>
+        <div class="opportunity-copy reveal" data-delay="1">
+          <span class="section-index">04 / Neden şimdi?</span>
+          <h2>Türkiye İçin Büyük Bir Fırsat</h2>
+          <p>Yapay zekâdaki hızlı gelişim artık fiziksel dünyaya taşınıyor. Robotik sistemler sabit ve önceden programlanmış makinelerden, çevresini algılayabilen ve yeni görevleri öğrenebilen sistemlere dönüşüyor.</p>
+          <p>Türkiye’de Physical AI ve yeni nesil robotik alanındaki girişim ekosistemi henüz erken aşamada. Semantic Robotics olarak bu dönüşümün yalnızca takipçisi değil, geliştiricilerinden biri olmayı hedefliyoruz.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="teknoloji" class="section tech-section">
+      <div class="container">
+        <div class="split-heading reveal">
+          <div><span class="section-index light">05 / Teknoloji</span><h2>Teknoloji<br>Altyapımız</h2></div>
+          <p>Algılamadan harekete uzanan katmanları tek bir çalışan sistemde bir araya getiriyoruz.</p>
+        </div>
+        <div class="tech-list" role="list">
+          <div role="listitem" class="reveal"><span>01</span>ROS / ROS2<small>Robot yazılım altyapısı</small></div>
+          <div role="listitem" class="reveal"><span>02</span>Computer Vision<small>Görsel algılama</small></div>
+          <div role="listitem" class="reveal"><span>03</span>Robot Manipulation<small>Hareket ve kavrama</small></div>
+          <div role="listitem" class="reveal"><span>04</span>Imitation Learning<small>Gösterimden öğrenme</small></div>
+          <div role="listitem" class="reveal"><span>05</span>Vision-Language-Action Models<small>Çok modlu görev anlama</small></div>
+          <div role="listitem" class="reveal"><span>06</span>SLAM &amp; Navigation<small>Konumlama ve hareket</small></div>
+          <div role="listitem" class="reveal"><span>07</span>Sensor Fusion<small>Çoklu sensör algısı</small></div>
+          <div role="listitem" class="reveal"><span>08</span>Simulation &amp; Digital Twins<small>Güvenli geliştirme</small></div>
+          <div role="listitem" class="reveal"><span>09</span>Humanoid Robotics<small>İnsan ortamlarında çalışma</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ekip" class="section team-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-index">06 / Ekip</span>
+          <h2>Teknik Geçmişten Gelen Bir Ekip</h2>
+          <p>Ekibimiz elektrik-elektronik, kontrol, otomasyon ve bilgisayar mühendisliği geçmişine sahip üç mühendisten oluşuyor. Uzun süredir otonom sistemler, robotik ve yapay zekâ projeleri geliştiriyoruz.</p>
+        </div>
+        <div class="team-grid">
+          <article class="person-card reveal">
+            <div class="monogram" aria-hidden="true">SA</div><span class="person-number">01</span>
+            <h3>Samet Atak</h3><h4>İTÜ Kontrol ve Otomasyon Mühendisliği</h4>
+            <p>Robotik, otonom sistemler ve yapay zekâ alanlarında teknik geçmiş. Ulusal ve uluslararası robotik yarışmalarında kazanımlar. Robot yazılımı, navigasyon, algılama ve sistem entegrasyonu deneyimi.</p>
+          </article>
+          <article class="person-card reveal" data-delay="1">
+            <div class="monogram" aria-hidden="true">E</div><span class="person-number">02</span>
+            <h3>Emir</h3><h4>İTÜ Elektrik-Elektronik Fakültesi Mezunu</h4>
+            <p>Lise yıllarından itibaren roket ve mühendislik yarışmalarında aktif. TEKNOFEST ve farklı teknik projelerde uzun süreli mühendislik tecrübesi.</p>
+          </article>
+          <article class="person-card reveal" data-delay="2">
+            <div class="monogram" aria-hidden="true">M</div><span class="person-number">03</span>
+            <h3>Mustafa</h3><h4>Sabancı Üniversitesi Bilgisayar Mühendisliği Mezunu</h4>
+            <p>Yazılım ve yapay zekâ altyapısında güçlü teknik geçmiş. TÜBİTAK İHA yarışmaları ve farklı mühendislik projelerinde deneyim.</p>
+          </article>
+        </div>
+        <blockquote class="team-statement reveal">“Farklı disiplinlerdeki tecrübemizi aynı hedefte birleştiriyoruz: Türkiye'den global ölçekte rekabet edebilecek bir robotik teknoloji şirketi çıkarmak.”</blockquote>
+      </div>
+    </section>
+
+    <section id="iletisim" class="contact-section">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="section-index light">07 / İletişim</span>
+          <h2>Birlikte Geleceğin Robotik Sistemlerini Geliştirelim.</h2>
+          <p>İş birlikleri, pilot uygulamalar ve teknoloji ortaklıkları için bizimle iletişime geçin.</p>
+        </div>
+        <div class="contact-links reveal" data-delay="1">
+          <div><span>E-posta</span><strong>Yakında</strong></div>
+          <div><span>LinkedIn</span><strong>Yakında</strong></div>
+          <div><span>GitHub</span><strong>Yakında</strong></div>
+        </div>
+      </div>
+      <div class="container footer">
+        <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Semantic <strong>Robotics</strong></span></a>
+        <p>© 2026 Semantic Robotics</p>
+        <a href="#top">Yukarı dön <span aria-hidden="true">↑</span></a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
