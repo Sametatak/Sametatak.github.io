@@ -4,342 +4,322 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samet Atak | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Samet Atak — robotics & autonomous systems engineer. ROS 2, MPPI control, autonomous navigation, machine learning.">
+    <meta name="theme-color" content="#07090c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
-    <header>
+    <header class="topbar">
+        <a href="#top" class="brand"><span class="brand-dot"></span>samet.atak</a>
         <nav>
-            <ul>
-                <li><a href="#about" class="nav-link active">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#repositories" class="nav-link">Repositories</a></li>
-                <li><a href="#publications" class="nav-link">Publications</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-            </ul>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#spotlight" class="nav-link">Projects</a>
+            <a href="#repositories" class="nav-link">Repos</a>
+            <a href="#publications" class="nav-link">Papers</a>
+            <a href="#achievements" class="nav-link">Awards</a>
         </nav>
+        <a href="assets/Samet_Atak_cv-OCTOBER.pdf" target="_blank" class="cv-btn">CV ↗</a>
     </header>
 
-    <main>
-        <section id="about">
-            <div class="container hero-container">
-                <div class="hero-left">
-                    <img src="assets/linkedin_pp.jpg" alt="Samet Atak Profile Picture" class="profile-pic">
-                    <h1>Samet Atak</h1>
-                    <p class="subtitle">ITU Control & Automation Eng. Student<br>Machine Learning & Autonomous Systems</p>
+    <main id="top">
+
+        <!-- HERO -->
+        <section class="hero">
+            <canvas id="rollouts" aria-hidden="true"></canvas>
+            <div class="hero-grid-bg" aria-hidden="true"></div>
+            <div class="container hero-inner">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow"><span class="pulse"></span>Robotics · Control · Machine Learning</p>
+                    <h1>Samet<br><span class="outline">Atak</span></h1>
+                    <p class="lead">I build autonomous robots that leave the simulator — from MPPI controllers in ROS&nbsp;2 to a self-driving vessel that won NJORD&nbsp;2023.</p>
                     <div class="hero-tags">
-                        <span>ROS 2</span>
-                        <span>MPPI</span>
-                        <span>Autonomous Navigation</span>
+                        <span>ROS 2</span><span>MPPI</span><span>Autonomous Navigation</span><span>STM32</span><span>Deep Learning</span>
                     </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Sametatak" target="_blank">GitHub</a>
-                        <a href="https://linkedin.com/in/samet-atak-506980250" target="_blank">LinkedIn</a>
-                        <a href="mailto:sametatakwork@gmail.com">Email</a>
+                    <div class="hero-actions">
+                        <a href="#spotlight" class="btn btn-primary">See the robots</a>
+                        <a href="https://github.com/Sametatak" target="_blank" class="btn btn-ghost">GitHub</a>
+                        <a href="https://linkedin.com/in/samet-atak-506980250" target="_blank" class="btn btn-ghost">LinkedIn</a>
+                        <a href="mailto:sametatakwork@gmail.com" class="btn btn-ghost">Email</a>
                     </div>
                 </div>
-                <div class="hero-right">
-                    <h2>About Me</h2>
-                    <p>
-                       As a senior Control and Automation Engineering student at Istanbul Technical University (ITU), I have focused my work on autonomous robotic systems and machine learning. Through academic research at the University of Kassel (Germany) and industrial projects at Machine Arge, I gained experience in transforming theoretical foundations into functional field systems. I demonstrated my competence in ROS, embedded systems, and deep learning by securing 1st place in the international NJORD competition. I aim to contribute value as an engineer to innovative projects developing autonomous technologies.
-                    </p>
-                    <p>
-                        I served as a Machine Learning Researcher at the University of Kassel, Germany, where I focused on automated hyperparameter tuning for ensemble regression models and contributed to a research paper on the topic.
-                    </p>
-                    <p>
-                        I also have hands-on experience as an Autonomous Robot Developer at Machine Arge. In this role, I developed autonomous algorithms using ROS, implemented path planning and obstacle avoidance, and worked with embedded systems (STM32) and various sensors (Intel RealSense, GPS-IMU) to achieve robust real-time performance.
-                    </p>
+                <div class="hero-portrait reveal">
+                    <div class="portrait-frame">
+                        <img src="assets/linkedin_pp.jpg" alt="Samet Atak">
+                        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+                    </div>
+                    <div class="portrait-tag mono">ITU · Control &amp; Automation Eng.</div>
+                </div>
+            </div>
+            <div class="container stats reveal">
+                <div class="stat"><strong>1st</strong><span>NJORD Autonomous Ship Challenge, Norway</span></div>
+                <div class="stat"><strong>Finalist</strong><span>Teknofest TIKA Competition</span></div>
+                <div class="stat"><strong>Kassel</strong><span>ML research, University of Kassel, Germany</span></div>
+                <div class="stat"><strong>TÜBİTAK</strong><span>Supported autonomous robot project</span></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="container about-grid">
+                <div class="section-head reveal">
+                    <span class="mono idx">01</span>
+                    <h2>About</h2>
+                </div>
+                <div class="about-body reveal">
+                    <p class="about-lead">Control &amp; Automation Engineering at Istanbul Technical University, focused on autonomous robotic systems and machine learning.</p>
+                    <p>Through academic research at the University of Kassel (Germany) and industrial projects at Machine Arge, I gained experience in transforming theoretical foundations into functional field systems. I demonstrated my competence in ROS, embedded systems, and deep learning by securing 1st place in the international NJORD competition. I aim to contribute value as an engineer to innovative projects developing autonomous technologies.</p>
+                    <div class="xp-list">
+                        <div class="xp">
+                            <span class="mono xp-role">Machine Learning Researcher</span>
+                            <h3>University of Kassel, Germany</h3>
+                            <p>Automated hyperparameter tuning for ensemble regression models; contributed to a research paper on the topic.</p>
+                        </div>
+                        <div class="xp">
+                            <span class="mono xp-role">Autonomous Robot Developer</span>
+                            <h3>Machine Arge</h3>
+                            <p>Autonomous algorithms in ROS — path planning and obstacle avoidance — with STM32 embedded systems, Intel RealSense and GPS-IMU for robust real-time performance.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section-bg">
+        <!-- SPOTLIGHT (videos) -->
+        <section id="spotlight" class="section section-alt">
             <div class="container">
-                <h2>Projects</h2>
-                <div class="card-grid">
-                    <div class="card project-card" data-target-modal="#robot-modal">
-                        <img src="assets/robot.jpg" alt="Autonomous Robot Project" class="card-img">
-                        <div class="card-content">
-                            <h3>Autonomous Robot Developer (Machine Arge)</h3>
-                            <p>
-                                Hands-on experience developing autonomous navigation and perception systems (TUBITAK supported project).
-                                <span class="click-to-see-more">Click to see details...</span>
-                            </p>
+                <div class="section-head reveal">
+                    <span class="mono idx">02</span>
+                    <h2>Project Spotlight</h2>
+                </div>
+                <div class="spotlight reveal">
+                    <div class="video-stage">
+                        <div class="video-hud mono"><span class="rec"></span>LIVE FIELD TEST <span class="hud-count">CAM <b id="cam-idx">01</b>/02</span></div>
+                        <div class="video-slide active">
+                            <video src="assets/robot-video-1.mp4" muted loop playsinline preload="metadata" controls></video>
                         </div>
+                        <div class="video-slide">
+                            <video src="assets/robot-video-2.mp4" muted loop playsinline preload="metadata" controls></video>
+                        </div>
+                        <div class="video-switch">
+                            <button class="cam-btn active" data-slide="0">Cam 01</button>
+                            <button class="cam-btn" data-slide="1">Cam 02</button>
+                        </div>
+                    </div>
+                    <div class="spotlight-info">
+                        <span class="pill">Machine Arge · TÜBİTAK supported</span>
+                        <h3>Autonomous Field Robot</h3>
+                        <p>Hands-on development of autonomous navigation and perception for a real-world ground robot.</p>
+                        <ul class="check-list">
+                            <li>Embedded systems for STM32-based microcontrollers.</li>
+                            <li>Path planning and obstacle avoidance with ROS.</li>
+                            <li>Intel RealSense, visual odometry and GPS-IMU fusion for precise localization.</li>
+                            <li>Autonomous waypoint navigation to GPS coordinates outdoors.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-<section id="repositories">
+        <!-- REPOSITORIES -->
+        <section id="repositories" class="section">
             <div class="container">
-                <h2>GitHub Repositories</h2>
-                <div class="card-grid">
+                <div class="section-head reveal">
+                    <span class="mono idx">03</span>
+                    <h2>GitHub Repositories</h2>
+                </div>
 
-                    <div class="card repo-card featured-repo-card" data-target-modal="#mppi-modal">
-                        <div class="media-shell">
-                            <img src="assets/mppi-ros-overview.png" alt="MPPI ROS2 navigation in RViz and Gazebo" class="card-img">
-                            <span class="image-badge">ROS 2 + MPPI</span>
-                        </div>
-                        <div class="card-content">
-                            <h3>
-                                <a href="https://github.com/Sametatak/Mppi_ros" target="_blank" style="color: inherit; text-decoration: none;">
-                                    MPPI ROS2 Navigation Planner
-                                </a>
-                            </h3>
-                            <p>
-                                A ROS2 navigation experiment combining a custom costmap, simple global planner, pure-pursuit lookahead, and an MPPI local controller in RViz/Gazebo.
-                                <span class="click-to-see-more">Click to see simulation details...</span>
-                            </p>
-                            <div class="repo-tags">
-                                <span>ROS2</span>
-                                <span>Gazebo</span>
-                                <span>RViz</span>
-                                <span>Control</span>
-                            </div>
-                            <div class="card-links">
-                                <a href="https://github.com/Sametatak/Mppi_ros" target="_blank">View Repository</a>
-                            </div>
+                <article class="repo-featured reveal" data-target-modal="#mppi-modal">
+                    <div class="repo-media">
+                        <img src="assets/mppi-ros-overview.png" alt="MPPI ROS2 navigation in RViz and Gazebo" loading="lazy">
+                        <span class="badge mono">ROS 2 + MPPI</span>
+                    </div>
+                    <div class="repo-body">
+                        <span class="mono xp-role">Featured</span>
+                        <h3>MPPI ROS2 Navigation Planner</h3>
+                        <p>A ROS2 navigation experiment combining a custom costmap, simple global planner, pure-pursuit lookahead, and an MPPI local controller in RViz/Gazebo.</p>
+                        <div class="chips"><span>ROS2</span><span>Gazebo</span><span>RViz</span><span>Control</span></div>
+                        <div class="repo-actions">
+                            <button class="btn btn-primary btn-sm" type="button">Simulation details</button>
+                            <a href="https://github.com/Sametatak/Mppi_ros" target="_blank" class="btn btn-ghost btn-sm">Repository ↗</a>
                         </div>
                     </div>
+                </article>
 
-                    <div class="card">
-                        <a href="https://github.com/Sametatak/cartpole-control-mpc-rl" target="_blank">
-                            <img src="assets/repo-cartpole.gif" alt="Cartpole Control" class="card-img">
-                        </a>
-                        <div class="card-content">
-                            <h3>
-                                <a href="https://github.com/Sametatak/cartpole-control-mpc-rl" target="_blank" style="color: inherit; text-decoration: none;">
-                                    Cartpole Control (MPC & RL)
-                                </a>
-                            </h3>
-                            <p>
-                                Cartpole (inverted pendulum) balancing algorithms developed using Model Predictive Control (MPC) and Reinforcement Learning techniques.
-                            </p>
-                            <div class="card-links">
-                                <a href="https://github.com/Sametatak/cartpole-control-mpc-rl" target="_blank">View Repository</a>
-                            </div>
+                <div class="repo-grid">
+                    <a class="repo-card reveal" href="https://github.com/Sametatak/cartpole-control-mpc-rl" target="_blank">
+                        <div class="repo-media"><img src="assets/repo-cartpole.gif" alt="Cartpole control" loading="lazy"></div>
+                        <div class="repo-body">
+                            <h3>Cartpole Control (MPC &amp; RL)</h3>
+                            <p>Inverted-pendulum balancing with Model Predictive Control and Reinforcement Learning.</p>
+                            <span class="repo-link mono">View repository ↗</span>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <a href="https://github.com/Sametatak/legged_control" target="_blank">
-                            <img src="assets/repo-legged.gif" alt="Legged Robot Control" class="card-img">
-                        </a>
-                        <div class="card-content">
-                            <h3>
-                                <a href="https://github.com/Sametatak/legged_control" target="_blank" style="color: inherit; text-decoration: none;">
-                                    Legged Robot Control
-                                </a>
-                            </h3>
-                            <p>
-                                Implementations of leg control for trot walking and stair climbing for a quadruped robot in Gazebo.
-                            </p>
-                            <div class="card-links">
-                                <a href="https://github.com/Sametatak/legged_control" target="_blank">View Repository</a>
-                            </div>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/Sametatak/legged_control" target="_blank">
+                        <div class="repo-media"><img src="assets/repo-legged.gif" alt="Legged robot control" loading="lazy"></div>
+                        <div class="repo-body">
+                            <h3>Legged Robot Control</h3>
+                            <p>Trot walking and stair climbing leg control for a quadruped robot in Gazebo.</p>
+                            <span class="repo-link mono">View repository ↗</span>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <a href="https://github.com/Sametatak/princebles_of_robot_hw" target="_blank">
-                            <img src="assets/repo-hardware.png" alt="Principles of Robot Hardware" class="card-img">
-                        </a>
-                        <div class="card-content">
-                            <h3>
-                                <a href="https://github.com/Sametatak/princebles_of_robot_hw" target="_blank" style="color: inherit; text-decoration: none;">
-                                    RGBD and LIDAR SLAM
-                                </a>
-                            </h3>
-                            <p>
-                                Implementation of RGB-D and lidar SLAM in a Gazebo simulation environment.
-                            </p>
-                            <div class="card-links">
-                                <a href="https://github.com/Sametatak/princebles_of_robot_hw" target="_blank">View Repository</a>
-                            </div>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/Sametatak/princebles_of_robot_hw" target="_blank">
+                        <div class="repo-media"><img src="assets/repo-hardware.png" alt="RGB-D and LIDAR SLAM" loading="lazy"></div>
+                        <div class="repo-body">
+                            <h3>RGBD and LIDAR SLAM</h3>
+                            <p>RGB-D and lidar SLAM implemented in a Gazebo simulation environment.</p>
+                            <span class="repo-link mono">View repository ↗</span>
                         </div>
-                    </div>
-
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="publications" class="section-bg">
+        <!-- PUBLICATIONS -->
+        <section id="publications" class="section section-alt">
             <div class="container">
-                <h2>Academic Papers & Reports</h2>
-                <ul class="publications-list">
-                    <li>
-                        <div class="publication-item">
-                            <div>
-                                <span class="publication-type">Technical Report</span>
-                                <h3 class="publication-title">Advancing Ensemble Regression: Automated Hyperparameter Tuning of the Diversity-Accuracy Trade-Off in Sign Diversity Metric</h3>
-                                <p class="publication-authors"><strong>Samet Atak</strong></p>
-                                <p class="publication-venue">Machine Learning Researcher Internship Report (MRT-report3), University of Kassel, Germany (2025)</p>
-                                <p class="publication-description">This report details research into optimizing ensemble regression models by automatically tuning hyperparameters to achieve a better balance between model diversity and accuracy, utilizing a novel sign diversity metric.</p>
-                                <div class="card-links">
-                                    <a href="assets/MRT-report3.pdf" target="_blank">View Report (PDF)</a>
-                                </div>
-                            </div>
+                <div class="section-head reveal">
+                    <span class="mono idx">04</span>
+                    <h2>Papers &amp; Reports</h2>
+                </div>
+                <div class="pub-list">
+                    <a class="pub reveal" href="assets/MRT-report3.pdf" target="_blank">
+                        <span class="pub-year mono">2025</span>
+                        <div class="pub-main">
+                            <span class="pill">Technical Report</span>
+                            <h3>Advancing Ensemble Regression: Automated Hyperparameter Tuning of the Diversity-Accuracy Trade-Off in Sign Diversity Metric</h3>
+                            <p class="pub-meta"><strong>Samet Atak</strong> · Machine Learning Researcher Internship Report (MRT-report3), University of Kassel, Germany</p>
+                            <p>Optimizing ensemble regression models by automatically tuning hyperparameters to balance model diversity and accuracy, using a novel sign diversity metric.</p>
                         </div>
-                    </li>
-                    <li>
-                        <div class="publication-item">
-                            <div>
-                                <span class="publication-type">Paper</span>
-                                <h3 class="publication-title">Real-Time Face Recognition and Tracking in Matlab</h3>
-                                <p class="publication-authors"><strong>Samet Atak</strong>, &Uuml;same Delihasan</p>
-                                <p class="publication-venue">IEEE Formatted Project Paper (2025)</p>
-                                <p class="publication-description">This paper explores the development of a real-time face recognition and tracking system implemented in Matlab, focusing on efficient algorithms for detection, identification, and continuous tracking of faces within a video stream.</p>
-                                <div class="card-links">
-                                    <a href="assets/IEEE_Paper.pdf" target="_blank">View Paper (PDF)</a>
-                                </div>
-                            </div>
+                        <span class="pub-arrow">PDF ↗</span>
+                    </a>
+                    <a class="pub reveal" href="assets/IEEE_Paper.pdf" target="_blank">
+                        <span class="pub-year mono">2025</span>
+                        <div class="pub-main">
+                            <span class="pill">Paper</span>
+                            <h3>Real-Time Face Recognition and Tracking in Matlab</h3>
+                            <p class="pub-meta"><strong>Samet Atak</strong>, &Uuml;same Delihasan · IEEE Formatted Project Paper</p>
+                            <p>A real-time face recognition and tracking system in Matlab, focusing on efficient detection, identification and continuous tracking within a video stream.</p>
                         </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="achievements">
-            <div class="container">
-                <h2>Achievements</h2>
-                <div class="achievement-grid">
-                    
-                    <div class="achievement-item" data-target-modal="#njord-modal">
-                        <img src="assets/njord-1.jpg" alt="NJORD Challenge" class="achievement-bg">
-                        <div class="achievement-title-overlay">
-                            <h3>Winner - NJORD The Autonomous Ship Challenge (2023)</h3>
-                        </div>
-                    </div>
-
-                    <div class="achievement-item" data-target-modal="#teknofest-modal">
-                        <img src="assets/teknofest.jpg" alt="Teknofest TIKA" class="achievement-bg">
-                        <div class="achievement-title-overlay">
-                            <h3>Finalist - Teknofest TIKA Competition</h3>
-                        </div>
-                    </div>
-
+                        <span class="pub-arrow">PDF ↗</span>
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- ACHIEVEMENTS -->
+        <section id="achievements" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="mono idx">05</span>
+                    <h2>Achievements</h2>
+                </div>
+                <div class="award-grid">
+                    <button class="award reveal" data-target-modal="#njord-modal" type="button">
+                        <img src="assets/njord-1.jpg" alt="NJORD Challenge" loading="lazy">
+                        <div class="award-overlay">
+                            <span class="award-rank mono">01 · Winner · 2023</span>
+                            <h3>NJORD — The Autonomous Ship Challenge</h3>
+                            <span class="award-more mono">Open gallery +</span>
+                        </div>
+                    </button>
+                    <button class="award reveal" data-target-modal="#teknofest-modal" type="button">
+                        <img src="assets/teknofest.jpg" alt="Teknofest TIKA" loading="lazy">
+                        <div class="award-overlay">
+                            <span class="award-rank mono">Finalist</span>
+                            <h3>Teknofest TIKA Competition</h3>
+                            <span class="award-more mono">Open gallery +</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact">
+            <div class="container contact-inner reveal">
+                <p class="mono eyebrow">Open to robotics &amp; autonomy work</p>
+                <h2>Let's build something that moves.</h2>
+                <div class="hero-actions center">
+                    <a href="mailto:sametatakwork@gmail.com" class="btn btn-primary">sametatakwork@gmail.com</a>
+                    <a href="assets/Samet_Atak_cv-OCTOBER.pdf" target="_blank" class="btn btn-ghost">Download CV</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Samet Atak. All rights reserved.</p>
+        <div class="container footer-inner">
+            <span>&copy; 2026 Samet Atak</span>
+            <span class="mono">Istanbul · TR</span>
+        </div>
     </footer>
 
-    <div class="modal" id="robot-modal">
+    <!-- MODALS -->
+    <div class="modal" id="mppi-modal" role="dialog" aria-modal="true">
         <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h3>Project Spotlight: Autonomous Robot Developer</h3>
-            
-            <div class="modal-slider-container">
-                <div class="video-slider">
-                    <div class="video-slide active">
-                        <video src="assets/robot-video-1.mp4" controls autoplay muted loop playsinline>
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="video-slide">
-                        <video src="assets/robot-video-2.mp4" controls autoplay muted loop playsinline>
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <button class="slider-btn prev-btn">&lt;</button>
-                <button class="slider-btn next-btn">&gt;</button>
-            </div>
-            
-            <h4>Key Features & Responsibilities:</h4>
-            <ul>
-                <li>Developed embedded systems for STM32-based microcontrollers.</li>
-                <li>Implemented autonomous navigation algorithms (path planning, obstacle avoidance) using ROS.</li>
-                <li>Utilized Intel RealSense cameras, visual odometry, and GPS-IMU for precise localization.</li>
-                <li>Enabled autonomous waypoint navigation to GPS coordinates in real-world environments.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="modal" id="mppi-modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content modal-content-wide">
-            <button class="modal-close">&times;</button>
-            <h3>Repository Spotlight: MPPI ROS2 Navigation Planner</h3>
-
+        <div class="modal-content modal-wide">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <span class="mono xp-role">Repository Spotlight</span>
+            <h3>MPPI ROS2 Navigation Planner</h3>
             <div class="mppi-showcase">
                 <img src="assets/mppi-ros-overview.png" alt="RViz and Gazebo view of the MPPI ROS2 planner">
-                <div class="mppi-notes">
-                    <p>
-                        This repository packages a ROS2 navigation prototype around a Python MPPI controller. The stack publishes visualization topics for sampled rollouts, the selected trajectory, costmap data, and target markers so the behavior can be inspected directly in RViz while Gazebo runs the scene.
-                    </p>
-                    <ul class="feature-list">
+                <div>
+                    <p>This repository packages a ROS2 navigation prototype around a Python MPPI controller. The stack publishes visualization topics for sampled rollouts, the selected trajectory, costmap data, and target markers so the behavior can be inspected directly in RViz while Gazebo runs the scene.</p>
+                    <ul class="check-list">
                         <li>Diff-drive kinematic model with sampled velocity commands.</li>
                         <li>Cost function balancing target distance, heading error, and obstacle cost.</li>
                         <li>Simple global planner and pure-pursuit lookahead target selection.</li>
                         <li>Launch flow for costmap, global planner, MPPI controller, and RViz.</li>
                     </ul>
-                    <div class="card-links">
-                        <a href="https://github.com/Sametatak/Mppi_ros" target="_blank">Open on GitHub</a>
-                    </div>
+                    <a href="https://github.com/Sametatak/Mppi_ros" target="_blank" class="btn btn-primary btn-sm">Open on GitHub ↗</a>
                 </div>
             </div>
-
-            <div class="command-strip">
-                <code>ros2 launch my_mpc_planner start_world.launch.py</code>
-                <code>ros2 launch my_mpc_planner navigation2_mppi.launch.py</code>
-                <code>ros2 launch my_mpc_planner mppi_launch.py</code>
+            <div class="terminal mono">
+                <div class="term-bar"><i></i><i></i><i></i></div>
+                <code><span>$</span> ros2 launch my_mpc_planner start_world.launch.py</code>
+                <code><span>$</span> ros2 launch my_mpc_planner navigation2_mppi.launch.py</code>
+                <code><span>$</span> ros2 launch my_mpc_planner mppi_launch.py</code>
             </div>
-
-            <div class="mppi-gallery">
-                <div class="mppi-detail-tile">
-                    <span>Controller</span>
-                    <p>Samples candidate velocity rollouts, scores them, and shifts the nominal control sequence forward each cycle.</p>
-                </div>
-                <div class="mppi-detail-tile">
-                    <span>Visualization</span>
-                    <p>Publishes rollout markers, best trajectory, goal marker, target marker, and occupancy grid views for RViz.</p>
-                </div>
-                <div class="mppi-detail-tile">
-                    <span>Simulation</span>
-                    <p>Pairs Gazebo obstacle scenes with RViz inspection to tune navigation behavior in a repeatable environment.</p>
-                </div>
+            <div class="tiles">
+                <div class="tile"><span class="mono">Controller</span><p>Samples candidate velocity rollouts, scores them, and shifts the nominal control sequence forward each cycle.</p></div>
+                <div class="tile"><span class="mono">Visualization</span><p>Publishes rollout markers, best trajectory, goal marker, target marker, and occupancy grid views for RViz.</p></div>
+                <div class="tile"><span class="mono">Simulation</span><p>Pairs Gazebo obstacle scenes with RViz inspection to tune navigation behavior in a repeatable environment.</p></div>
             </div>
         </div>
     </div>
 
-    <div class="modal" id="njord-modal">
+    <div class="modal" id="njord-modal" role="dialog" aria-modal="true">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h3>Winner - NJORD The Autonomous Ship Challenge (2023)</h3>
-            <p>
-                As a ROS Team Member of ITU Autobee, we achieved first place in the 2023 NJORD Autonomous Ship Challenge held in Norway. This involved developing a fully autonomous vessel to compete in complex navigation, obstacle avoidance, and docking tasks.
-            </p>
-            <div class="modal-gallery">
-                <img src="assets/njord-1.jpg" alt="NJORD Competition Photo 1">
-                <img src="assets/njord-2.jpg" alt="NJORD Competition Photo 2">
-                <img src="assets/njord-3.jpg" alt="NJORD Competition Photo 3">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <span class="mono xp-role">Winner · 2023</span>
+            <h3>NJORD — The Autonomous Ship Challenge</h3>
+            <p>As a ROS Team Member of ITU Autobee, we achieved first place in the 2023 NJORD Autonomous Ship Challenge held in Norway. This involved developing a fully autonomous vessel to compete in complex navigation, obstacle avoidance, and docking tasks.</p>
+            <div class="gallery">
+                <img src="assets/njord-1.jpg" alt="NJORD photo 1" loading="lazy">
+                <img src="assets/njord-2.jpg" alt="NJORD photo 2" loading="lazy">
+                <img src="assets/njord-3.jpg" alt="NJORD photo 3" loading="lazy">
             </div>
         </div>
     </div>
 
-    <div class="modal" id="teknofest-modal">
+    <div class="modal" id="teknofest-modal" role="dialog" aria-modal="true">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h3>Finalist - Teknofest TIKA Competition</h3>
-            <p>
-                With the ITU Autobee team, we successfully qualified as finalists in the Teknofest TIKA Competition, developing innovative autonomous solutions for challenging scenarios.
-            </p>
-            <div class="modal-gallery">
-                <img src="assets/teknofest.jpg" alt="Teknofest Competition Photo">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <span class="mono xp-role">Finalist</span>
+            <h3>Teknofest TIKA Competition</h3>
+            <p>With the ITU Autobee team, we successfully qualified as finalists in the Teknofest TIKA Competition, developing innovative autonomous solutions for challenging scenarios.</p>
+            <div class="gallery single">
+                <img src="assets/teknofest.jpg" alt="Teknofest photo" loading="lazy">
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>
